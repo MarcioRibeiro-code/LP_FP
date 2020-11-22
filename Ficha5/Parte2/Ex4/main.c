@@ -8,22 +8,28 @@
  * File:   main.c
  * Author: Desktop
  *
- * Created on 20 de novembro de 2020, 23:06
+ * Created on 21 de novembro de 2020, 15:15
  */
 
 #include <stdio.h>
 #include <stdlib.h>
-#include "lib.h"
+#include "LIB.H"
+
 /*
  * 
  */
-int main() {
 
-    int a[t][t];
-    obter_dados(a);
-   max(a);
-   min(a);
-    //escrevermatriz(a);
-    return 0;
+
+
+int main(){
+
+   int a,b;
+   float res;
+    a=num();
+    b=num();
+    
+ res = potencia(a,b);
+ printf("%d elevado a %d = %f", a, b,res);
+ return 0;
 }
 

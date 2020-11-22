@@ -47,15 +47,30 @@ void max(int matr[t][t]) {
 
         }
     }
-    printf("Max: %i", max);
+    printf("\n\nMax: %i", max);
 }
 
-void escrevermatriz(int a[t][t]) {
-    for (int i = 0; i < t; i++) {
-        for (int j = 0; j < t; j++) printf("%3d", a[i][0]);
-        printf("\n");
+void min(int matr[t][t]) {
+    int a, min;
+    for (int x = 0; x < t; x++) {
+
+        for (int y = 0; y < t; y++) {
+
+            a = matr[x][y];
+            if (a < min) {
+                min = a;
+            }
+        }
     }
+    printf("\nMin: %i", min);
 }
+
+    void escrevermatriz(int a[t][t]) {
+        for (int i = 0; i < t; i++) {
+            for (int j = 0; j < t; j++) printf("%3d", a[i][0]);
+            printf("\n");
+        }
+    }
 
 #endif /* LIB_H */
 
