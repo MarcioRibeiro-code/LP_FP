@@ -14,101 +14,246 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
+#include "input.h"
+#include "funclib.h"
+
 //struct
 
-struct dados {
-    int f_cod; //funcionario_codigo
-    char f_nome[25]; //funcionario_nome
-    int f_numtlf; //funcionario_telefone
-    char f_estcivil; //funcionario_estadocivil
-    int f_numfil; //funcionario_ numero de filhos
-    char f_cargo; //funcionario_cargo
-    //data de saida
-    int f_idade; //funcionario_idade
-    int f_temp_emp; //funcionario_ Tempo na empresa
-    int f_assiduidade; //funcionario_Assiduidade
-
-
-} funcionario;
 
 int n = 0; //Utilizado no create
 int tl, sl, ts;
 
 void input() {
-    FILE *fp = fopen("funcionario.txt", "rb+");
+
+    FUNCIONARIO funcionario;
+
+    FILE *fp = fopen(FILENAME, "wb");
     if (fp == NULL) {
         printf("\nErro no ficheiro");
-    } else {
-        printf("\ncustomer no:%d\n", ++funcionario.f_cod);
-        printf("         Nome Funcionario:");
-        scanf("%s", &funcionario.f_nome);
-        printf("\n       Numero Telefone:");
-        scanf("%d", &funcionario.f_numtlf);
-        printf("\n       Estado Civil:");
-        scanf(" %c", &funcionario.f_estcivil);
-        printf("         Numero de Filhos:");
-        scanf("%d", &funcionario.f_numfil);
-        printf("         Cargo:");
-        scanf(" %c", &funcionario.f_cargo);
-        printf("         Idade funcionario:");
-        scanf("%d", &funcionario.f_idade);
-
-        fclose(fp);
     }
+    
+    printf("         Nome Funcionario:");
+    scanf("%s", &funcionario.nome);
+    printf("\n       Numero Telefone:");
+    scanf("%d", &funcionario.num_tlf);
+    printf("\n       Estado Civil:");
+    printf("\n1 - CASADO\n2 - DIVORCIADO\n3 - SEPARAÇÃO DE FACTO\n4 - VIUVEZ\n5 - SOLTEIRO\n");
+    scanf(" %d", &funcionario.est_civil);
+    printf("         Numero de Filhos:");
+    scanf("%d", &funcionario.num_dependentes);
+    printf("         Cargo:");
+    scanf(" %c", &funcionario.cargo);
+    printf("         Data de nascimento");
+    printf("\nDIA: "); scanf("%d", &funcionario.data_de_nascimento.dia);
+    printf("MES: ");scanf("%d",&funcionario.data_de_nascimento.mes);
+    printf("ANO: ");scanf("%d",&funcionario.data_de_nascimento.ano);
+    printf("Data de entrada");
+    printf("\nDIA: ");scanf("%d",&funcionario.data_de_entrada.dia);
+    printf("MES: ");scanf("%d",&funcionario.data_de_entrada.mes);
+    printf("ANO: ");scanf("%d",&funcionario.data_de_entrada.ano);
+    funcionario.codigo++
+    fwrite(&funcionario, sizeof (FUNCIONARIO), 1, fp);
+    fclose(fp);
+
 
 }
 
+
+
+
 void output() {
+
+    dados funcionario;
+
+    FILE *fp = fopen(FILENAME, "rb");
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+    fread(&funcionario, sizeof (dados), 1, fp);
+
     printf("\n\n    codigo    :%d\n", funcionario.f_cod);
     printf("    Name 	   :%s\n", funcionario.f_nome);
     printf("    Mobile no      :%d\n", funcionario.f_numtlf);
-    printf("    Estado Civil         :%c\n", funcionario.f_estcivil);
+    printf("    Estado Civil         :%s\n", estadoCivilToString(funcionario.f_estcivil));
     printf("    Nº de filhos          :%d\n", funcionario.f_numfil);
-    printf("    Cargo    :%c\n", funcionario.f_cargo);
+    printf("    Cargo    :%s\n", cargoToString(funcionario.f_cargo));
     printf("    Idade:%d\n", funcionario.f_idade);
-}
 
-void writefile() {
-    FILE *fp;
-    fp = fopen("funcionario.txt", "a+b");
-    fwrite(&funcionario, sizeof (struct dados), 1, fp);
     fclose(fp);
-    return;
 }
 
 void searchfile() {
 
+    dados funcionario;
+    int indice;
 
-    FILE *fp;
-    fp = fopen("funcionario.txt", "r");
-    fseek(fp, 0, SEEK_END);
-    tl = ftell(fp);
-    sl = sizeof (funcionario);
-    ts = tl / sl;
-    printf("\nchoose customer number:");
-    scanf("%d", &n);
-    fseek(fp, (n - 1) * sl, SEEK_SET);
-    fread(&funcionario, sl, 1, fp);
-    output();
+    FILE *fp = fopen(FILENAME, "rb");
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Codigo Funcionario");
+    scanf("%i", &indice);
+
+    if (fseek(fp, sizeof (dados) * indice, SEEK_SET) == 0) {
+        if (fread(&funcionario, sizeof (dados), 1, fp)) {
+            printf("\n\n    codigo    :%d\n", funcionario.f_cod);
+            printf("    Name 	   :%s\n", funcionario.f_nome);
+            printf("    Mobile no      :%d\n", funcionario.f_numtlf);
+            printf("    Estado Civil         :%s\n", estadoCivilToString(funcionario.f_estcivil));
+            printf("    Nº de filhos          :%d\n", funcionario.f_numfil);
+            printf("    Cargo    :%s\n", cargoToString(funcionario.f_cargo));
+            printf("    Idade:%d\n", funcionario.f_idade);
+        }
+    }
+
     fclose(fp);
 }
 
 void editar() {
-    searchfile();
+    dados func;
+    dados temp;
 
-    FILE *fp;
-    FILE *fptr;
-    int h;
-    int found = 0;
-    int ka = 0;
-    int p;
-    fp = fopen("funcionario.txt", "rb+");
-    fptr = fopen("temp1.txt", "rb+");
-    printf("\t");
-    printf("Codigo do Funcionario: ");
-    scanf("%d", &h);
-    printf("\n");
-    p = n;
+    int indice;
+
+    FILE *fp = fopen(FILENAME, "rb+");
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Codigo Funcionario");
+    scanf("%i", &indice);
+
+    if (fseek(fp, sizeof (dados) * indice, SEEK_SET) == 0) {
+        if (fread(&func, sizeof (dados), 1, fp)) {
+            printf("         Nome Funcionario:");
+            scanf("%s", &temp.f_nome);
+            strcpy(func.f_nome, temp.f_nome);
+            printf("\n       Numero Telefone:");
+            scanf("%d", &temp.f_numtlf);
+            func.f_numtlf = temp.f_numtlf;
+            printf("\n       Estado Civil:");
+            scanf(" %d", &temp.f_estcivil);
+            func.f_estcivil = temp.f_estcivil;
+            printf("         Numero de Filhos:");
+            scanf("%d", &temp.f_numfil);
+            func.f_numfil = temp.f_numfil;
+            printf("         Cargo:");
+            scanf(" %d", &temp.f_cargo);
+            func.f_cargo = temp.f_cargo;
+            printf("         Idade funcionario:");
+            scanf("%d", &temp.f_idade);
+            func.f_idade = temp.f_idade;
+
+
+
+            fseek(fp, sizeof (dados) * -1, SEEK_CUR);
+
+            fwrite(&func, sizeof (dados), 1, fp);
+        }
+    }
+
+    fclose(fp);
+
+}
+
+void readcsv(dict values[]) {
+    FILE *fp = fopen(FILENAME_CSV, "r");
+    int x;
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    char line[200];
+    int row_count = 0;
+    int field_count = 0;
+
+    int i = 0;
+    while (fgets(line, sizeof (line), fp)) {
+        field_count = 0;
+        row_count++;
+
+        char *token;
+        token = strtok(line, ";");
+
+        while (token != NULL) {
+            if (field_count == 0)
+                strcpy(values[i].col1, token);
+            if (field_count == 1)
+                strcpy(values[i].col2, token);
+            if (field_count == 2)
+                strcpy(values[i].col3,token);
+            if (field_count == 3)
+                strcpy(values[i].col4, token);
+            if (field_count == 4)
+                strcpy(values[i].col5, token);
+            if (field_count == 5)
+                strcpy(values[i].col6, token);
+            if (field_count == 6)
+                strcpy(values[i].col7, token);
+            token = strtok(NULL, ";");
+            field_count++;
+        }
+        i++;
+        printf("\n");
+    }
+    x=i;
+  
+}
+
+void parsecsv(dict values[], int x) {
+    FILE *fp = fopen(FILENAME_CSV, "r");
+
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+    char buff[1024]; // guarda as 1º 1024 linhas para o buff
+    int row_count = 0;
+    int field_count = 0;
+
+    //array de struct para armazenar valores
+
+    int i = 0;
+    while (fgets(buff, 1024, fp)) {
+        field_count = 0;
+        row_count++;
+
+        char *field = strtok(buff, ";"); // separa o buff com ;
+        while (field != NULL) {
+            if (field_count == 0)
+                strcpy(values[i].col1, field);
+            if (field_count == 1)
+                strcpy(values[i].col2, field);
+            if (field_count == 2)
+                strcpy(values[i].col3, field);
+            if (field_count == 3)
+                strcpy(values[i].col4, field);
+            if (field_count == 4)
+                strcpy(values[i].col5, field);
+            if (field_count == 5)
+                strcpy(values[i].col6, field);
+            if (field_count == 6)
+                strcpy(values[i].col7, field);
+
+            field = strtok(NULL, ";");
+            field_count++;
+        }
+        i++;
+    }
+    x = i;
+    fclose(fp);
+
+}
+
+void printValues(dict values[], int x) {
+    printf("%i", x);
+    for (int i = 0; i < x; i++) {
+
+
+        printf("VALOR SALARIO %s, Col1 %s, Col2 %s, Col3 %s, Col4 %s, Col5 %s, Col5 %s", values[i].col1, values[i].col2, values[i].col3, values[i].col4, values[i].col5, values[i].col6, values[i].col7);
+        printf("\n");
+    }
 
 }
 
@@ -116,28 +261,92 @@ void editar() {
  * 
  */
 int main() {
-    int ch = 0;
+   
+    FUNCIONARIOS funcionarios = {.contador = 0};
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    /*int ch = 0, x=0;
+    dict values[999];
+    
+    
+    readcsv(values);
 
+        printf("1 - Inserir");
+        printf("2 - Pesquisar");
+        printf("3 - Listar");
+        printf("4 - Editar");
+        printf("0 - sair");
 
-    scanf("%i", & ch);
-    switch (ch) {
-        case 1:
-            system("clear");
-            printf("\nhow many customer accounts?");
-            scanf("%d", &n);
-            for (int i = 0; i < n; i++) {
-                input();
-                writefile();
-            }
-            main();
-        case 2:
-            searchfile();
-            main();
-        case 3:
-            system("clear");
-            exit(1);
+        scanf("%i", & ch);
+        switch (ch) {
+            case 1:
 
-    }
+                printf("\nhow many customer accounts?");
+                scanf("%d", &n);
+                for (int i = 0; i < n; i++) {
+                    input();
+                }
+                main();
+            case 2:
+                searchfile();
+                main();
+
+            case 3:
+                output();
+                main();
+
+            case 4:
+                editar();
+                main();
+            case 0:
+                system("clear");
+                exit(1);
+
+        }
+     */
+
+    
+    //parsecsv(values, x);
+    //printValues(values, x);
+
     return 0;
 }
 
