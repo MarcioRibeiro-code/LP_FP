@@ -13,47 +13,76 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include<time.h>
 #include "aluno.h"
-
-
-
+#include "input.h"
 /*
  * 
  */
 int main() {
-    int count = 0, menu;
+    int total_registos,menu;
+    ALUNOS alunos[ALUNOS_MAX];
     
+    FILE *fp;
 
-    /*
-        int op=0;
-         do{
-             inserir(arluno);
-             imprimir(arluno);
-            
-             printf("\n\nDeseja Sair- 0 Sair\n");
-             scanf("%i",&op);
-         }while(op!=0);
-     */
-    
-        do {
+    do {
 
-            printf("\n\nMENU");
-            printf("\n1- Armazenar/Consultar um aluno");
-            printf("\n2- Armazenar/Consultar 30 alunos");
-            printf("\n0 - Sair\n");
-            scanf("%i", &menu);
-            switch (menu) {
-                case 1:
-                    ac_umaluno(&count);
-                    break;
-                case 2:
-                   // ac_30alunos(&count);
-                    break;
-                case 0:
-                    exit(1);
+        printf("\n\nMENU");
+        printf("\n1- Inserir");
+        printf("\n2- Listar todos");
+        printf("\n3- Consultar um aluno");
+        printf("\n4- Atualizar dados aluno");
+        printf("\n5- Eliminar dados aluno");
+        printf("\n6- Carregar Ficheiro");
+        printf("\n7- Imprimir no Ficheiro");
+        printf("\n0 - Sair\n");
+        scanf("%i", &menu);
+        switch (menu) {
+            case 1:
+                Inserir(alunos);
+                break;
+            case 2:
+                Listar(alunos);
+                break;
+            case 3:
+                Consulta(alunos);
+                break;
+            case 4:
+                Atualizar(alunos);
+                break;
+            case 5:
+                Eliminar(alunos);
+                break;
+            case 6:
+                fp = fopen(FILENAME, "rb");
+                if (alunos != NULL) {
+                    total_registos = fread(alunos, sizeof (ALUNOS), ALUNOS_MAX, fp);
+                    if (total_registos != alunos[0].contador) {
+                        puts("Lista Vazia");
+                    } else if (total_registos == 0) {
+                        alunos[0].contador = 0;
+                    }
+                    else {
+                        printf("total: %d\n", alunos[0].contador);
+                    }
+                }
+                fclose(fp);
+                break;
+                
+            case 7:
+                fp = fopen(FILENAME, "wb");
+                fwrite(alunos, sizeof (ALUNOS), alunos[0].contador , fp);
+                fclose(fp);
+                puts("Gravado com sucesso");
+                break;
+                
+            case 0:
+                exit(1);
 
-            }
-        } while (menu != 0);
+        }
+    } while (menu != 0);
+
     //inserir(&aluno);
     // imprimir(aluno);
     return 0;

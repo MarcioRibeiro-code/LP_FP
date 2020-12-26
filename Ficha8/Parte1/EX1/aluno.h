@@ -1,62 +1,61 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 
-/* 
- * File:   aluno.h
- * Author: Desktop
- *
- * Created on 12 de dezembro de 2020, 21:38
- */
 
 #ifndef ALUNO_H
 #define ALUNO_H
 #define FILENAME "lib_aluno.bin"
+#define LOG_FILE "log.txt"
 
-#define TAMANHO 2
+
+#define ALUNOS_MAX 30
+#define STRING_MAX 40
+
+#define ERRO_ALUNO_NAO_EXISTE   "O aluno não existe na lista."
+#define ERRO_LISTA_VAZIA        "A lista de alunos está vazia."
+#define ERRO_LISTA_CHEIA        "A lista de alunos está cheia."
+#define ERRO_ALUNO_EXISTE       "O número de aluno já se encontra atribuído."
+
+#define MIN_NUM_ALUNO           0
+#define MAX_NUM_ALUNO           1000
+#define MSG_OBTER_NUM_ALUNO     "Insira um número de aluno [0-1000]: "
+
+#define MAX_NOME_ALUNO          31
+#define MSG_OBTER_NOME              "Insira o nome do aluno: "
+
+#define MIN_DIA                 0
+#define MAX_DIA                 31
+#define OBTER_DIA_NASC          "Insira o dia de nascimento: "
+
+#define MIN_MES                 1
+#define MAX_MES                 12
+#define OBTER_MES_NASC          "Insira o mês de nascimento: "
+
+#define MIN_ANO                 1990
+#define MAX_ANO                 2021
+#define OBTER_ANO_NASC          "Insira o ano de nascimento: "
 
 typedef struct {
     int dia, mes, ano;
 } data;
 
 typedef struct {
-    int num;
+    
+    int numero,contador,flag;
     char nome[30];
     data Data;
 
-} aluno;
+} ALUNOS;
 
-int inserir_umaluno(int *count) {
-    int a = *count;
-    aluno arluno;
 
-    FILE *fp = fopen(FILENAME, "wb+");
-    if (fp == NULL) {
-        exit(EXIT_FAILURE);
-    }
 
-        printf("ALUNO [%i]", a);
-        arluno.num = a;
-        printf("\nNOME");
-        scanf(" %s", arluno.nome);
-        printf("\nDATA DE NASCIMENTO");
-        printf("\nDIA");
-        scanf("%d", arluno.Data.dia);
-        printf("\nMES");
-        scanf("%d", arluno.Data.mes);
-        printf("\nANO");
-        scanf("%d", arluno.Data.ano);
+void logMsg(char *msg, char *filename);
+int ProcurarAluno(ALUNOS alunos[], int numero,int x);
+void Inserir(ALUNOS alunos[]);
+void Consulta(ALUNOS alunos[]);
+void Atualizar(ALUNOS alunos[]);
+void Eliminar(ALUNOS alunos[]);
+void Listar(ALUNOS alunos[]);
 
-        fwrite(&arluno, sizeof (aluno), 1, fp);
-        a++;
- 
-
-    fclose(fp);
-    return a;
-}
-
+/*
 void consultar_umaluno() {
     int i;
     aluno arluno;
@@ -82,6 +81,8 @@ void consultar_umaluno() {
     fclose(fp);
 }
 
+ */
+/*
 void ac_umaluno(int *count) {
     char aux;
 
@@ -93,50 +94,41 @@ void ac_umaluno(int *count) {
     if (aux == 'C') {
         consultar_umaluno();
     } else if (aux == 'I') {
-        *count = inserir_umaluno(count);
+ *count = inserir_umaluno(count);
     }
 }
+ */
 
-int inserir_30aluno(int *count, aluno aluno[]) {
+/*
+int inserir_umaluno(int *count) {
     int a = *count;
-    do {
-        scanf("%d", &aluno[a].num);
-        scanf(" %s", aluno[a].nome);
-        scanf("%d", &aluno[a].Data.dia);
-        scanf("%d", &aluno[a].Data.mes);
-        scanf("%d", &aluno[a].Data.ano);
+    aluno arluno;
+
+    FILE *fp = fopen(FILENAME, "wb+");
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+        printf("ALUNO [%i]", a);
+        arluno.num = a;
+        printf("\nNOME");
+        scanf(" %s", arluno.nome);
+        printf("\nDATA DE NASCIMENTO");
+        printf("\nDIA");
+        scanf("%d", &arluno.Data.dia);
+        printf("\nMES");
+        scanf("%d", &arluno.Data.mes);
+        printf("\nANO");
+        scanf("%d", &arluno.Data.ano);
+
+        fwrite(&arluno, sizeof (aluno), 1, fp);
         a++;
-    } while (a < TAMANHO);
+ 
+
+    fclose(fp);
     return a;
 }
+ */
 
-void consultar_30aluno(int *count, aluno aluno[]) {
-    int a = 0;
-    do {
-        printf("\n\nNum aluno: %d", aluno[a].num);
-        printf("\nNome aluno: %s", aluno[a].nome);
-        printf("\n %d-%d-%d ", aluno[a].Data.dia, aluno[a].Data.mes,
-                aluno[a].Data.ano);
-        a++;
-    } while (a < *count);
-
-}
-
-void ac_30alunos(int *count, aluno aluno[]) {
-    char aux;
-
-    printf("Opçoes");
-    printf("\nC- Consultar");
-    printf("\nI- Inserir\n");
-    scanf(" %c", &aux);
-
-    if (aux == 'C') {
-        consultar_30aluno(count, aluno);
-    } else if (aux == 'I') {
-        *count = inserir_30aluno(count, aluno);
-    }
-
-
-}
 #endif /* ALUNO_H */
 

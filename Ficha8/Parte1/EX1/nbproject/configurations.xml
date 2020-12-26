@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true">
       <itemPath>aluno.h</itemPath>
+      <itemPath>input.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
@@ -39,6 +40,8 @@
       </compileType>
       <item path="aluno.h" ex="false" tool="3" flavor2="0">
       </item>
+      <item path="input.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>
     </conf>
@@ -63,6 +66,8 @@
         </asmTool>
       </compileType>
       <item path="aluno.h" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="input.h" ex="false" tool="3" flavor2="0">
       </item>
       <item path="main.c" ex="false" tool="0" flavor2="0">
       </item>

@@ -1,0 +1,7 @@
+https://stackoverflow.com/questions/7951019/how-to-convert-string-to-float
+https://www.portugal-a-programar.pt/forums/topic/49900-problema-em-lergravar-ficheiro-binario-de-memoria-dinamica/
+https://stackoverflow.com/questions/2060974/how-to-include-a-dynamic-array-inside-a-struct-in-c
+https://stackoverflow.com/questions/260915/how-can-i-create-a-dynamically-sized-array-of-structs
+https://stackoverflow.com/questions/12990723/dynamic-array-of-structs-in-c
+https://www.codingame.com/playgrounds/14213/how-to-play-with-strings-in-c/array-of-c-string
+https://www.tutorialspoint.com/c_standard_library/c_function_rewind.htm
