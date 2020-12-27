@@ -18,6 +18,9 @@ typedef enum {
 
 //CONSTANTES
 
+#define TAMANHO_INICIAL 2
+
+
 //NUMERO DE FUNCIONARIOS POSSIVEIS NO PROGRAMA
 #define MAX_NUM_FUNC 50
 
@@ -92,6 +95,7 @@ typedef struct {
 } DATA;
 
 typedef struct {
+    int contador,flag;
     int codigo; //funcionario_codigo
     char nome[MAX_CHAR_NOME]; //funcionario_nome
     char num_tlf[MAX_CHAR_NUM_TLF]; //funcionario_telefone
@@ -104,11 +108,6 @@ typedef struct {
     DATA data_de_saida; //funcionario_Assiduidade
 } FUNCIONARIO;
 
-typedef struct {
-    int contador;
-    FUNCIONARIO funcionarios[MAX_NUM_FUNC];
-
-} FUNCIONARIOS;
 
 typedef struct key_value {
     char col1[50];
@@ -123,11 +122,11 @@ typedef struct key_value {
 //_______________________________________________________________________
 
 //PROTOTIPOS
-void inserirFuncionarios(FUNCIONARIOS *funcionarios);
-void procurarFuncionarios(FUNCIONARIOS funcionarios);
-void atualizarFuncionarios(FUNCIONARIOS *funcionarios);
-void removerFuncionarios(FUNCIONARIOS *funcionarios);
-void listarFuncionarios(FUNCIONARIOS funcionarios);
+void Inserir_Funcionario(FUNCIONARIO *funcionarios);
+void procurarFuncionarios(FUNCIONARIO funcionarios);
+void atualizarFuncionarios(FUNCIONARIO *funcionarios);
+void removerFuncionarios(FUNCIONARIO *funcionarios);
+void listarFuncionarios(FUNCIONARIO funcionarios);
 //________________________________________________________________________
 #endif /* FUNCLIB_H */
 
