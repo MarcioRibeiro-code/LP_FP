@@ -49,8 +49,8 @@ char *estadoCivilToString(ESTADO_CIVIL est_civ) {
     }
 }
 
-char *cargoToString(CARGO f_cargo) {
-    switch (f_cargo) {
+char *cargoToString(CARGO cargo) {
+    switch (cargo) {
         case EMPREGADO:
             return "EMPREGADO";
             break;
@@ -65,33 +65,26 @@ char *cargoToString(CARGO f_cargo) {
             return "EMPREGADO";
     }
 }
+
+char *EST_IRS_ToString(ESTADO_IRS irs) {
+    switch (irs) {
+        case N_CASADO:
+            return "Não Casado";
+            break;
+
+        case CASADO_1TITULAR:
+            return "Casado 1 Titular";
+            break;
+
+        case CASADO_2TITULAR:
+            return "Casado 2 Titular";
+            break;
+    }
+
+}
 //______________________________________________________________________________
 
-void imprimirFuncionario(FUNCIONARIO funcionario) {
-
-    printf("\nCodigo: %d", funcionario.codigo);
-    printf("\nNome do Funcionario: %s", funcionario.nome);
-    printf("\nNumero de Telefone: %s", funcionario.num_tlf);
-    printf("\nEstado Civil: %s", estadoCivilToString(funcionario.est_civil));
-    printf("\nNumero de Dependentes: %i", funcionario.num_dependentes);
-    printf("\nCargo: %s", cargoToString(funcionario.cargo));
-
-    printf("\nData de Nascimento: %d-%d-%d", funcionario.data_de_nascimento.dia,
-            funcionario.data_de_nascimento.mes, funcionario.data_de_nascimento.ano);
-
-    printf("\nData de Entrada: %d-%d-%d", funcionario.data_de_entrada.dia,
-            funcionario.data_de_entrada.mes, funcionario.data_de_entrada.ano);
-
-    if (funcionario.data_de_saida != NULL) {
-
-        printf("\nData de Saida: %d-%d-%d", funcionario.data_de_saida.dia,
-                funcionario.data_de_saida.mes, funcionario.data_de_saida.ano);
-
-    } else {
-        printf("\nData de Saida: %s", ERRO_DATA_DE_SAIDA);
-    }
-}
-
+/*
 void apagarDadosFuncionario(FUNCIONARIO *funcionario) {
 
     funcionario->codigo = 0;
@@ -110,191 +103,8 @@ void apagarDadosFuncionario(FUNCIONARIO *funcionario) {
     funcionario->data_de_saida.dia = funcionario->data_de_saida.mes =
             funcionario->data_de_saida.ano = 0;
 }
-
-int procurarFuncionario(FUNCIONARIOS funcionarios, int numero) {
-    int i;
-
-
-    for (i = 0; i < funcionarios.contador; i++) {
-        if (funcionarios.funcionarios[i].codigo == numero) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-int inserirFuncionario(FUNCIONARIOS *funcionarios) {
-    int numero = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC);
-    int aux;
-
-
-    if (procurarFuncionarios(*funcionarios, numero) == -1) {
-
-        //CODIGO FUNCIONARIO
-        funcionarios->funcionarios[funcionarios->contador].codigo = numero;
-
-        //NOME DO FUNCIONARIO
-        lerString(funcionarios->funcionarios[funcionarios->contador].nome,
-                MAX_CHAR_NOME, OBTER_NOME_FUNC);
-
-        //NUMERO DE TELEFONE DO FUNCIONARIOS
-        lerString(funcionarios->funcionarios[funcionarios->contador].num_tlf,
-                MAX_CHAR_NUM_TLF, OBTER_TLF_FUNC);
-
-
-        //ESTADO CIVIL DO FUNCIONARIO
-        funcionarios->funcionarios[funcionarios->contador].est_civil
-                = obterInt(MIN_EST_CIVIL, MAX_EST_CIVIL, OBTER_EST_CIVIL);
-
-        //NUMERO DE DEPENDETENS DO FUNCIONARIO
-        funcionarios->funcionarios[funcionarios->contador].num_dependentes
-                = obterInt(MIN_NUM_DEPENDENTES, MAX_NUM_DEPENDENTES, OBTER_NUM_DEPENDENTES);
-
-        //CARGO DO FUNCIONARIO
-        funcionarios->funcionarios[funcionarios->contador].cargo
-                = obterInt(MIN_NUM_CARGO, MAX_NUM_CARGO, OBTER_NUM_CARGO);
-
-        //DATA DE NASCIMENTO
-        //DIA
-        funcionarios->funcionarios[funcionarios->contador]->data_de_nascimento.dia
-                = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_NASC);
-
-        //MES    
-        funcionarios->funcionarios[funcionarios->contador]->data_de_nascimento.mes
-                = obterInt(MIN_MES, MAX_DIA, OBTER_MES_NASC);
-
-        //ANO
-        funcionarios->funcionarios[funcionarios->contador]->data_de_nascimento.ano
-                = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_NASC);
-
-        //DATA DE ENTRADA
-        //DIA
-        funcionarios->funcionarios[funcionarios->contador]->data_de_entrada.dia
-                = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_ENTRADA);
-
-        //MES
-        funcionarios->funcionarios[funcionarios->contador]->data_de_entrada.mes
-                = obterInt(MIN_MES, MAX_MES, OBTER_MES_ENTRADA);
-
-        //ANO
-        funcionarios->funcionarios[funcionarios->contador]->data_de_entrada.ano
-                = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_ENTRADA);
-        return funcionarios->contador++;
-    }
-    return -1;
-}
-
-void atualizarFuncionario(FUNCIONARIO *funcionario) {
-
-    //ATUALIZAR NOME DO FUNCIONARIO
-    lerString((*funcionario).nome, MAX_CHAR_NOME, OBTER_NOME_FUNC);
-
-    //ATUALIZAR TLF DO FUNCIONARIO
-    lerString((*funcionario).num_tlf, MAX_CHAR_NUM_TLF, OBTER_TLF_FUNC);
-
-    //ATUALIZAR ESTADO DO CIVIL DO FUNCIONARIO
-    (*funcionario).est_civil = obterInt(MIN_EST_CIVIL, MAX_EST_CIVIL, OBTER_EST_CIVIL);
-
-    //ATUALIZAR NUMERO DE DEPENDENTES DO FUNCIONARIO
-    (*funcionario).num_dependentes = obterInt(MIN_NUM_DEPENDENTES,
-            MAX_NUM_DEPENDENTES, OBTER_NUM_DEPENDENTES);
-
-    //ATUALIZAR CARGO DO FUNCIONARIO
-    (*funcionario).cargo = obterInt(MIN_NUM_CARGO, MAX_NUM_CARGO, OBTER_NUM_CARGO);
-
-    //ATUALIZAR DATA DE NASCIMENTO DO FUNCIONARIO
-    //DIA
-    (*funcionario).data_de_nascimento.dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_NASC);
-
-    //MES
-    (*funcionario).data_de_nascimento.mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_NASC);
-
-    //ANO
-    (*funcionario).data_de_nascimento.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_NASC);
-
-    //ATUALIZAR DATA DE ENTRADA DO FUNCIONARIO
-    //DIA
-    (*funcionario).data_de_entrada.dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_ENTRADA);
-
-    //MES
-    (*funcionario).data_de_entrada.mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_ENTRADA);
-
-    //ANO
-    (*funcionario).data_de_entrada.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_ENTRADA);
-
-    //ATUALIZAR DATA DE SAIDA DO FUNCIONARIO
-    int aux = obterInt(MIN_VERIFICACAO_SAIDA, MAX_VERIFICACAO_SAIDA, OBTER_VALOR_VERIFICACAO_SAIDA);
-    if (aux == 1) {
-        (*funcionario).data_de_saida.dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_SAIDA);
-        (*funcionario).data_de_saida.mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_SAIDA);
-        (*funcionario).data_de_saida.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_SAIDA);
-    }
-}
-
-void inserirFuncionarios(*funcionarios) {
-    if (funcionarios->contador < MAX_NUM_FUNC) {
-        if (inserirFuncionario(funcionarios) == -1) {
-            puts(ERRO_FUNCIONARIO_EXISTE);
-        }
-    } else {
-        puts(ERRO_LISTA_CHEIA);
-    }
-}
-
-void procurarFuncionarios(FUNCIONARIOS funcionarios) {
-
-    int numero = procurarFuncionario(funcionarios, obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC));
-
-    if (numero != -1) {
-        imprimirFuncionario(funcionarios.funcionarios[numero]);
-    } else {
-        puts(ERRO_FUNCIONARIO_NAO_EXISTE);
-    }
-}
-
-void atualizarLivros(FUNCIONARIOS *funcionarios) {
-
-    int numero = procurarFuncionario(*funcionarios, obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC));
-
-    if (numero != -1) {
-        atualizarFuncionario(&(*funcionarios).funcionarios[numero]);
-    } else {
-        puts(ERRO_FUNCIONARIO_NAO_EXISTE);
-    }
-}
-
-/*
-void removerFuncionarios(FUNCIONARIOS *funcionarios) {
-
-
-    int i, numero = procurarFuncionario(*funcionarios, obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC));
-
-    if (numero != -1) {
-        for (i = numero; i < funcionarios->contador - 1; i++) {
-            funcionarios->funcionarios[i] = funcionarios->funcionarios[i + 1];
-        }
-
-        apagarDadosFuncionario(&funcionarios->funcionarios[i]);
-
-        funcionarios->contador--;
-    } else {
-        puts(ERRO_FUNCIONARIO_NAO_EXISTE);
-    }
-}
  */
 
-/*
-void listarFuncionarios(FUNCIONARIOS funcionarios) {
-    if (funcionarios.contador > 0) {
-        int i;
-        for (i = 0; i < funcionarios.contador; i++) {
-            imprimirFuncionario(funcionarios.funcionarios[i]);
-        }
-    } else {
-        puts(ERRO_LISTA_VAZIA);
-    }
-}
- */
 
 int Procurar_CodFuncionario(FUNCIONARIO funcionarios[], int numero, int tamanho) {
     int i;
@@ -310,14 +120,13 @@ int Procurar_CodFuncionario(FUNCIONARIO funcionarios[], int numero, int tamanho)
 void Inserir_Funcionario(FUNCIONARIO *funcionarios) {
     int aux;
     int contador = funcionarios[0].contador;
-
     printf("\nInserir Funcionario");
 
     printf("\nCodigo");
 
+    cleanInputBuffer();
     //CODIGO DO FUNCIONARIO
     aux = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC);
-    cleanInputBuffer();
 
     if (Procurar_CodFuncionario(funcionarios, aux, contador) == -1) {
         funcionarios[contador].codigo = aux;
@@ -335,6 +144,10 @@ void Inserir_Funcionario(FUNCIONARIO *funcionarios) {
         //NUMERO DE DEPENDENTES DO FUNCIONARIO
         funcionarios[contador].num_dependentes = obterInt(MIN_NUM_DEPENDENTES,
                 MAX_NUM_DEPENDENTES, OBTER_NUM_DEPENDENTES);
+
+        //ESTADO IRS DO FUNCIONARIO
+        funcionarios[contador].est_irs = obterInt(MIN_EST_IRS, MAX_EST_IRS,
+                OBTER_EST_IRS);
 
         //CARGO DO FUNCIONARIO
         funcionarios[contador].cargo = obterInt(MIN_NUM_CARGO, MAX_NUM_CARGO,
@@ -363,10 +176,11 @@ void Inserir_Funcionario(FUNCIONARIO *funcionarios) {
 
         //ANO
         funcionarios[contador].data_de_entrada.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_ENTRADA);
-        if (contador % 2 == 1) funcionarios = realloc(funcionarios, sizeof (FUNCIONARIO)*2);
 
         funcionarios[contador].flag = 1;
         funcionarios[0].contador++;
+        // if(contador%2 ==1)
+        //funcionarios = realloc(funcionarios, sizeof (FUNCIONARIO)*contador);
     }
 }
 
@@ -379,16 +193,17 @@ void imprimirFuncionario(FUNCIONARIO funcionarios[], int i) {
         printf("\nEstado Civil: %s", estadoCivilToString(funcionarios[i].est_civil));
         printf("\nNumero de Depentendentes: %d", funcionarios[i].num_dependentes);
         printf("\nCargo: %s", cargoToString(funcionarios[i].cargo));
+        printf("\nIRS: %s", EST_IRS_ToString(funcionarios[i].est_irs));
 
         printf("\nData de Nascimento: %d-%d-%d", funcionarios[i].data_de_nascimento.dia,
                 funcionarios[i].data_de_nascimento.mes, funcionarios[i].data_de_nascimento.ano);
 
-        printf("\nData de Entrada: %d-%d-%d", funcionarios[i].data_de_entrada.dia,
+        printf("\nData de Entrada: %d-%d-%d\n", funcionarios[i].data_de_entrada.dia,
                 funcionarios[i].data_de_entrada.mes, funcionarios[i].data_de_entrada.ano);
     } else {
         printf("\nCodigo: %d", funcionarios[i].codigo);
         printf("\nNome do Funcionario: %s", funcionarios[i].nome);
-        printf("\nData de Saida: %s", funcionarios[i].data_de_saida.dia,
+        printf("\nData de Saida: %i-%i-%i\n", funcionarios[i].data_de_saida.dia,
                 funcionarios[i].data_de_saida.mes, funcionarios[i].data_de_saida.ano);
     }
 }
@@ -547,17 +362,218 @@ void AtualizarFuncionario(FUNCIONARIO *funcionarios) {
     }
 }
 
-
-void EliminarFuncionario(FUNCIONARIO *funcionarios){
+void EliminarFuncionario(FUNCIONARIO *funcionarios) {
     int contador = funcionarios[0].contador;
     int aux = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC);
     int numero = Procurar_CodFuncionario(funcionarios, aux, contador);
-    
-    if(numero !=-1){
-        funcionarios[numero].flag=0;
-        funcionarios[numero].data_de_saida.dia=; //Adicionar a data local atraves do <time.h> -> video do yt
-        funcionarios[numero].data_de_saida.mes=;
-        funcionarios[numero].data_de_saida.ano=;
+
+    if (numero != -1) {
+        funcionarios[numero].flag = 0;
+
+        time_t currentTime;
+        time(&currentTime);
+
+        struct tm *myTime = localtime(&currentTime);
+
+        funcionarios[numero].data_de_saida.dia = myTime->tm_mday; //Adicionar a data local atraves do <time.h> -> video do yt
+        funcionarios[numero].data_de_saida.mes = myTime->tm_mon + 1;
+        funcionarios[numero].data_de_saida.ano = myTime->tm_year + 1900;
     }
+}
+
+void EscreverFicheiro_Binario(FUNCIONARIO *funcionarios, FILE *fp) {
+    fp = fopen(FILENAME, "wb+");
+    int x = funcionarios[0].contador;
+
+    fwrite(funcionarios, sizeof (FUNCIONARIO), x, fp);
+
+    fclose(fp);
+    puts("\nGravado com Sucesso");
+}
+
+void LerFicheiro_Binario(FUNCIONARIO *funcionarios, FILE *fp) {
+    int x;
+
+    fp = fopen(FILENAME, "rb");
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    while (fread(funcionarios, sizeof (FUNCIONARIO), 1, fp) == 1) {
+        x += funcionarios->contador;
+    }
+    rewind(fp);
+    if (TAMANHO_INICIAL < x) {
+        funcionarios = (FUNCIONARIO*) realloc(funcionarios, sizeof (FUNCIONARIO)*(funcionarios[0].contador + 1)*2);
+    }
+    fread(funcionarios, sizeof (FUNCIONARIO), x, fp);
+    funcionarios[0].contador = x;
+
+    fclose(fp);
+}
+
+void readcsv(dict values[]) {
+    FILE *fp = fopen(FILENAME_CSV_nCasado, "r");
+    int x;
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    char line[200];
+    int row_count = 0;
+    int field_count = 0;
+
+    int i = 0;
+    while (fgets(line, sizeof (line), fp)) {
+        field_count = 0;
+        row_count++;
+
+        char *token;
+        token = strtok(line, ";");
+
+        while (token != NULL) {
+            if (field_count == 0)
+                strcpy(values[i].col1, token);
+            if (field_count == 1)
+                strcpy(values[i].col2, token);
+            if (field_count == 2)
+                strcpy(values[i].col3, token);
+            if (field_count == 3)
+                strcpy(values[i].col4, token);
+            if (field_count == 4)
+                strcpy(values[i].col5, token);
+            if (field_count == 5)
+                strcpy(values[i].col6, token);
+            if (field_count == 6)
+                strcpy(values[i].col7, token);
+            token = strtok(NULL, ";");
+            field_count++;
+        }
+        i++;
+        printf("\n");
+    }
+    x = i;
+}
+
+void printValues(dict values[], int x) {
+    printf("%i", x);
+    for (int i = 0; i < x; i++) {
+
+
+        printf("VALOR SALARIO %s, Col1 %s, Col2 %s, Col3 %s, Col4 %s, Col5 %s, Col5 %s", values[i].col1, values[i].col2, values[i].col3, values[i].col4, values[i].col5, values[i].col6, values[i].col7);
+        printf("\n");
+    }
+
+}
+
+float calcular_salarioBase(FUNCIONARIO funcionarios[], int numero, int dias[], int i) {
+    switch (funcionarios[numero].cargo) {
+        case 0:
+            //empregado
+            return (dias[i] * VALOR_HORA_EMPREGADO);
+            break;
+
+        case 1:
+            //CHEFE
+            return (dias[i] * VALOR_HORA_CHEFE);
+            break;
+
+        case 2:
+            //ADMINISTRADOR
+            return (dias[i] * VALOR_HORA_ADMINISTRADOR);
+            break;
+    }
+}
+
+void teste() {
+    dict values[50];
+    readcsv(values);
+    printValues(values, 3);
+}
+
+float calcular_irs(FUNCIONARIO funcionarios[], int numero, SALARIO salario) {
+
+    dict values[LINHAS_CSV_nCasado];
+
+    readcsv(values);
+    printValues(values, LINHAS_CSV_nCasado);
+    if (funcionarios[numero].est_irs == 0) {
+        switch (funcionarios[numero].num_dependentes) {
+
+            case 0:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col2));
+                    } else continue;
+                }
+                break;
+
+            case 1:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col3));
+                    } else continue;
+                }
+                break;
+
+            case 2:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col4));
+                    } else continue;
+                }
+                break;
+            case 3:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col5));
+                    } else continue;
+                }
+                break;
+            case 4:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col6));
+                    } else continue;
+                }
+                break;
+            case 5:
+                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
+                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                break;
+        }
+    }// else if (2x) do casado 1 titular e casado 2 titulares
     
+    
+    //comparar salario base, com o valor para col1
+    //depois disso ver o numero de dependentes do funcionario e multiplicar 
+    //pelo valor certo
+
+}
+
+void Calcular_salario(FUNCIONARIO *funcionarios) {
+    int contador = funcionarios[0].contador;
+    int aux = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC, MSG_OBTER_COD_FUNC);
+    int numero = Procurar_CodFuncionario(funcionarios, aux, contador);
+    SALARIO salario;
+
+    if (numero != -1) {
+        int *dias;
+        salario.num_meses = obterInt(MIN_MES, 60, OBTER_MES_TRABALHO) - 1;
+        dias = calloc(salario.num_meses, sizeof (int));
+        for (int i = 0; i < salario.num_meses; i++) {
+            //OBTER NUM DE DIAS POR MES
+            printf("MES [%i]", i + 1);
+            dias[i] = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
+            salario.base = calcular_salarioBase(funcionarios, numero, dias, i);
+            salario.sub_alimentacao = dias[i] * VALOR_SUBSIDIO_ALIMENTACAO;
+            //salario.valor_irs=(funcionarios,numero,salario);
+        }
+    } else {
+        puts(ERRO_FUNCIONARIO_NAO_EXISTE);
+    }
+
 }

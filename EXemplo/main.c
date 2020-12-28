@@ -65,7 +65,7 @@ void InitFile(FILE* File)
 // program mains
 //
 int main (void)
-  { FILE *File;
+  { /*FILE *File;
     int Quit = 0;
     int Rec = 0; // record number
 
@@ -106,4 +106,11 @@ int main (void)
 
 
     fclose(File);
+     * */
+    time_t currentTime;
+    time(&currentTime);
+    
+    struct tm *myTime = localtime(&currentTime);
+    printf("%i-%i-%i",myTime->tm_mday,myTime->tm_mon+1,myTime->tm_year+1900);
+    
     return 0; }

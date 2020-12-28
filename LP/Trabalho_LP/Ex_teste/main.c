@@ -23,7 +23,7 @@
 
 int n = 0; //Utilizado no create
 int tl, sl, ts;
-
+/*
 void input() {
 
     FUNCIONARIO funcionario;
@@ -52,16 +52,16 @@ void input() {
     printf("\nDIA: ");scanf("%d",&funcionario.data_de_entrada.dia);
     printf("MES: ");scanf("%d",&funcionario.data_de_entrada.mes);
     printf("ANO: ");scanf("%d",&funcionario.data_de_entrada.ano);
-    funcionario.codigo++
+    funcionario.codigo++;
     fwrite(&funcionario, sizeof (FUNCIONARIO), 1, fp);
     fclose(fp);
 
 
 }
+ */
 
 
-
-
+/*
 void output() {
 
     dados funcionario;
@@ -158,49 +158,7 @@ void editar() {
 
 }
 
-void readcsv(dict values[]) {
-    FILE *fp = fopen(FILENAME_CSV, "r");
-    int x;
-    if (fp == NULL) {
-        exit(EXIT_FAILURE);
-    }
 
-    char line[200];
-    int row_count = 0;
-    int field_count = 0;
-
-    int i = 0;
-    while (fgets(line, sizeof (line), fp)) {
-        field_count = 0;
-        row_count++;
-
-        char *token;
-        token = strtok(line, ";");
-
-        while (token != NULL) {
-            if (field_count == 0)
-                strcpy(values[i].col1, token);
-            if (field_count == 1)
-                strcpy(values[i].col2, token);
-            if (field_count == 2)
-                strcpy(values[i].col3,token);
-            if (field_count == 3)
-                strcpy(values[i].col4, token);
-            if (field_count == 4)
-                strcpy(values[i].col5, token);
-            if (field_count == 5)
-                strcpy(values[i].col6, token);
-            if (field_count == 6)
-                strcpy(values[i].col7, token);
-            token = strtok(NULL, ";");
-            field_count++;
-        }
-        i++;
-        printf("\n");
-    }
-    x=i;
-  
-}
 
 void parsecsv(dict values[], int x) {
     FILE *fp = fopen(FILENAME_CSV, "r");
@@ -246,112 +204,103 @@ void parsecsv(dict values[], int x) {
 
 }
 
-void printValues(dict values[], int x) {
-    printf("%i", x);
-    for (int i = 0; i < x; i++) {
 
-
-        printf("VALOR SALARIO %s, Col1 %s, Col2 %s, Col3 %s, Col4 %s, Col5 %s, Col5 %s", values[i].col1, values[i].col2, values[i].col3, values[i].col4, values[i].col5, values[i].col6, values[i].col7);
-        printf("\n");
-    }
-
-}
-
-
-
+ */
 
 /*
  * 
  */
 int main() {
-    int menu,x;
+    int menu, x;
     FILE *fp;
-    
-    FUNCIONARIO *funcionarios = calloc(TAMANHO_INICIAL,sizeof(FUNCIONARIO));
-    funcionarios->contador = 0;
-    
-    if(funcionarios == NULL) faill();
-    
-      do {
-          printf("\n%d",funcionarios[0].contador);
+/*
+    FUNCIONARIO *funcionarios = calloc(TAMANHO_INICIAL, sizeof (FUNCIONARIO));
+
+
+    if (funcionarios == NULL) faill();
+
+    do {
+        printf("\n%d", funcionarios[0].contador);
         printf("\n\nMENU");
-        printf("\n1- Inserir livros");
-        printf("\n2- Listar todos os livros");
-        printf("\n3- Consultar livro");
-        printf("\n4- Atualizar dados livro");
-        printf("\n5- Eliminar livro");
+        printf("\n1- Inserir Funcionario");
+        printf("\n2- Listar todos os Funcionarios");
+        printf("\n3- Consultar Funcionario");
+        printf("\n4- Atualizar dados Funcionario");
+        printf("\n5- Eliminar Funcionario");
         printf("\n6- Carregar Ficheiro");
         printf("\n7- Imprimir no Ficheiro");
         printf("\n0 - Sair\n");
         scanf("%i", &menu);
         switch (menu) {
             case 1:
+                funcionarios = (FUNCIONARIO*) realloc(funcionarios, sizeof (FUNCIONARIO)*(funcionarios[0].contador + 1)*2);
                 Inserir_Funcionario(funcionarios);
+
                 break;
             case 2:
-                Listar(livros);
+                listarFuncionarios(funcionarios);
                 break;
             case 3:
-                Consulta(livros);
+                consultaFuncionario(funcionarios);
                 break;
             case 4:
-                Atualizar(livros);
+                AtualizarFuncionario(funcionarios);
                 break;
             case 5:
-                Eliminar(livros);
+                EliminarFuncionario(funcionarios);
                 break;
             case 6:
-               LerFicheiro_Binario(livros, fp);
+                LerFicheiro_Binario(funcionarios, fp);
                 break;
-                
+
             case 7:
-                EscreverFicheiro_Binario(livros,fp);
+                EscreverFicheiro_Binario(funcionarios, fp);
                 //puts("Gravado com sucesso");
                 break;
-                
+
             case 0:
                 exit(1);
 
-        }  
+        }
     } while (menu != 0);
 
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+*/
+
+
+    teste();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     /*int ch = 0, x=0;
     dict values[999];
     
@@ -392,10 +341,10 @@ int main() {
         }
      */
 
-    
+
     //parsecsv(values, x);
     //printValues(values, x);
-
+   // free(funcionarios);
     return 0;
 }
 

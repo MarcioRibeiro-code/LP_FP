@@ -14,13 +14,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <time.h>
 
 #include "lib.h"
 /*
  * 
  */
 int main() {
-    //variaveis
+   /* //variaveis
     char cargo;
     int vencb[mes],suba[mes],irs[mes],ss[mes],valoi[mes];
     int dia[mes],op=1,cod;
@@ -47,6 +48,10 @@ int main() {
     printf("\nSair - 0\n");
     scanf("%i",&op);
     }while(op!=0);
+    */
+    
+    printf("%i",((2020-2010)*12)+12-1);
+    
     
     return 0;
 }
