@@ -3,7 +3,9 @@
 
 #define FILENAME "funcionario.dat"
 #define FILENAME_CSV_nCasado "Tabelas_IRS_2020_nCasado.csv"
-
+#define FILENAME_CSV_1Titular "TABELA_IRS_2020_1TITULAR.csv"
+#define FILENAME_CSV_2Titular "TABELA_IRS_2020_2TITULAR.csv"
+#define FILENAME_CSV_SS "TABELA_SS_2020.csv"
 
 //ENUMERAÇOES
 
@@ -21,8 +23,8 @@ typedef enum{
 //______________________________________________________________________
 
 //CONSTANTES
-#define LINHAS_CSV_nCasado 36
-
+#define LINHAS_CSV 35
+#define LINHAS_CSV_1titular 36 
 
 #define TAMANHO_INICIAL 2
 
@@ -138,9 +140,24 @@ typedef struct key_value {
     char col7[50];
 } dict;
 
+typedef struct{
+    char col1[50];
+    char col2[50];
+}SS; 
+
+
+typedef struct{
+    int valor_ss_funcionario;
+    int valor_ss_empresa;
+    int valor_ss_total;
+}TIPO_SS;
+
 typedef struct {
+    
+    int contador;
     int codigo_funcionario,num_meses;
-    float base,sub_alimentacao,valor_irs,valor_ss;
+    float base,sub_alimentacao,valor_irs;
+    TIPO_SS ss;
     
 }SALARIO;
 

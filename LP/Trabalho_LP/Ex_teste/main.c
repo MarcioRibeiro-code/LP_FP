@@ -265,10 +265,7 @@ int main() {
     } while (menu != 0);
 
 */
-
-
-    teste();
-
+    calcular_ss();
 
 
 

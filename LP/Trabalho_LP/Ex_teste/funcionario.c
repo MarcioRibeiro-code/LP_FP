@@ -412,8 +412,18 @@ void LerFicheiro_Binario(FUNCIONARIO *funcionarios, FILE *fp) {
     fclose(fp);
 }
 
-void readcsv(dict values[]) {
-    FILE *fp = fopen(FILENAME_CSV_nCasado, "r");
+void readcsv(dict values[], int est_irs) {
+    FILE *fp; //= fopen(FILENAME_CSV_nCasado, "r");
+
+    if (est_irs == 0) {
+        fp = fopen(FILENAME_CSV_nCasado, "r");
+    } else if (est_irs == 1) {
+        fp = fopen(FILENAME_CSV_1Titular, "r");
+    } else {
+        fp = fopen(FILENAME_CSV_2Titular, "r");
+    }
+
+
     int x;
     if (fp == NULL) {
         exit(EXIT_FAILURE);
@@ -455,12 +465,45 @@ void readcsv(dict values[]) {
     x = i;
 }
 
-void printValues(dict values[], int x) {
-    printf("%i", x);
-    for (int i = 0; i < x; i++) {
+void readcsv_seg_social(SS values[]) {
+    FILE *fp = fopen(FILENAME_CSV_SS, "r");
+    int x;
+    if (fp == NULL) {
+        exit(EXIT_FAILURE);
+    }
+
+    char line[200];
+    int row_count = 0;
+    int field_count = 0;
+
+    int i = 0;
+    while (fgets(line, sizeof (line), fp)) {
+        field_count = 0;
+        row_count++;
+
+        char *token;
+        token = strtok(line, ";");
+
+        while (token != NULL) {
+            if (field_count == 0)
+                strcpy(values[i].col1, token);
+            if (field_count == 1)
+                strcpy(values[i].col2, token);
+            token = strtok(NULL, ";");
+            field_count++;
+        }
+        i++;
+        printf("\n");
+    }
+    x = i;
+}
+
+void printValues(SS values[]) {
+
+    for (int i = 0; i < 3; i++) {
 
 
-        printf("VALOR SALARIO %s, Col1 %s, Col2 %s, Col3 %s, Col4 %s, Col5 %s, Col5 %s", values[i].col1, values[i].col2, values[i].col3, values[i].col4, values[i].col5, values[i].col6, values[i].col7);
+        printf(" Col1 %s, Col2 %s", values[i].col1, values[i].col2);
         printf("\n");
     }
 
@@ -485,73 +528,249 @@ float calcular_salarioBase(FUNCIONARIO funcionarios[], int numero, int dias[], i
     }
 }
 
-void teste() {
-    dict values[50];
-    readcsv(values);
-    printValues(values, 3);
-}
-
 float calcular_irs(FUNCIONARIO funcionarios[], int numero, SALARIO salario) {
+    int est_irs = funcionarios[numero].est_irs;
+    dict values[LINHAS_CSV_1titular];
+    int flag = 0, i;
 
-    dict values[LINHAS_CSV_nCasado];
+    if (est_irs == 0) { // NAO CASADO
 
-    readcsv(values);
-    printValues(values, LINHAS_CSV_nCasado);
-    if (funcionarios[numero].est_irs == 0) {
+        readcsv(values, est_irs);
         switch (funcionarios[numero].num_dependentes) {
 
             case 0:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col2));
+                        flag = 1;
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col2));
                 break;
 
             case 1:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col3));
+                        flag = 1;
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col3));
                 break;
 
             case 2:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col4));
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col4));
                 break;
+
             case 3:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col5));
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col5));
                 break;
+
             case 4:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col6));
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col6));
                 break;
+
             case 5:
-                for (int i = 0; i < LINHAS_CSV_nCasado; i++) {
-                    if (salario.base > values[i].col1 && salario.base < values[i + 1].col1) {
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
                         return (salario.base * atof(values[i].col7));
                     } else continue;
                 }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col7));
+                break;
+
+            default:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col7));
                 break;
         }
-    }// else if (2x) do casado 1 titular e casado 2 titulares
-    
-    
-    //comparar salario base, com o valor para col1
-    //depois disso ver o numero de dependentes do funcionario e multiplicar 
-    //pelo valor certo
 
+    } else if (est_irs == 1) { // 1- TITULAR
+        readcsv(values, est_irs);
+        switch (funcionarios[numero].num_dependentes) {
+
+            case 0:
+                for (i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col2));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col2));
+                break;
+
+            case 1:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col3));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col3));
+                break;
+
+            case 2:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col4));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col4));
+                break;
+            case 3:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col5));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col5));
+                break;
+            case 4:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col6));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col6));
+                break;
+            case 5:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col7));
+                break;
+            default:
+                for (int i = 0; i < LINHAS_CSV_1titular; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                if (i == 36 && flag == 0)
+                    return (salario.base * atof(values[36].col7));
+                break;
+        }
+    } else {
+
+        readcsv(values, est_irs);
+        switch (funcionarios[numero].num_dependentes) {
+
+            case 0:
+                for (i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col2));
+                        flag = 1;
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col2));
+                break;
+
+            case 1:
+                for (i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col3));
+                        flag = 1;
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col3));
+                break;
+
+            case 2:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col4));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col4));
+                break;
+
+            case 3:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col5));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col5));
+                break;
+
+            case 4:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col6));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col6));
+                break;
+
+            case 5:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col7));
+                break;
+
+            default:
+                for (int i = 0; i < LINHAS_CSV; i++) {
+                    if (salario.base <= atoi(values[i].col1)) {
+                        return (salario.base * atof(values[i].col7));
+                    } else continue;
+                }
+                if (i == 35 && flag == 0)
+                    return (salario.base * atof(values[35].col7));
+                break;
+        }
+
+    }
+
+    //comparar salario base, com o valor para col1 do respetivo ficheiro csv
+    //depois disso ver o numero de dependentes do funcionario 
+    //coluna para o nº de dependentes, multiplicar salario.base pelo valor da alinea
+
+}
+
+void calcular_ss() {
+    SS values[3];
+    readcsv_seg_social(values);
+    printValues(values);
 }
 
 void Calcular_salario(FUNCIONARIO *funcionarios) {
@@ -570,7 +789,7 @@ void Calcular_salario(FUNCIONARIO *funcionarios) {
             dias[i] = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
             salario.base = calcular_salarioBase(funcionarios, numero, dias, i);
             salario.sub_alimentacao = dias[i] * VALOR_SUBSIDIO_ALIMENTACAO;
-            //salario.valor_irs=(funcionarios,numero,salario);
+            salario.valor_irs = calcular_irs(funcionarios, numero, salario);
         }
     } else {
         puts(ERRO_FUNCIONARIO_NAO_EXISTE);
