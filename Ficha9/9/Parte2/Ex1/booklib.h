@@ -67,7 +67,7 @@ typedef struct {
 
 } tipo_editora;
 
-typedef struct {
+typedef struct livro{
     int contador,flag,n_autores;
     char ISBN[DIG_ISBN];
     data data_de_publicacao;
@@ -75,6 +75,7 @@ typedef struct {
     tipo_genero tipo;
     tipo_editora editora;
     tipo_autores autores[MAX_AUTORES];
+    struct livro *Prox;
 } LIVROS;
 
 typedef struct{
@@ -87,6 +88,7 @@ typedef struct{
     tipo_autores autores[];
 }temp;
 
+typedef LIVROS* FILA;
 
 void cleanInputBuffer();
 char *tipoToString(tipo_genero tipo);

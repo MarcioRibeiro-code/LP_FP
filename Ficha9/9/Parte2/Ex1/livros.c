@@ -50,16 +50,32 @@ int ProcurarLivro(LIVROS livros[], char ISBN[], int x) {
     return -1;
 }
 
-void Inserir(LIVROS *livros) {
-    char ISBN[DIG_ISBN];
+void Inic(FILA* Fila) {
+    *Fila = NULL;
+}
+
+void Inserir(FILA* Fila) {
+    
+    if(*Fila==NULL){
+    *Fila=(FILA)malloc(sizeof(sizeof(LIVROS)));
+    if(*FILA==NULL) return;
+    
+    printf("\nISBN: ");
+    scanf("%s",(*Fila).ISBN);
+    (**Fila).Prox=NULL;
+    
+    
+    }
+    
+    
     int x = livros[0].contador;
 
     printf("\nINSERIR LIVROS");
 
-    printf("\nISBN: ");
+   
     scanf(" %s", ISBN);
     cleanInputBuffer();
-    if (ProcurarLivro(livros, ISBN, x) == -1) {
+    
         strcpy(livros[x].ISBN, ISBN);
         lerString(livros[x].titulo, MAX_CHAR_TITULO, MSG_OBTER_TITULO);
 
@@ -81,17 +97,17 @@ void Inserir(LIVROS *livros) {
         livros[x].n_autores = obterInt(MIN_AUTORES, MAX_AUTORES
                 , OBTER_NUM_AUTORES);
 
-   //NUMERO DINAMICO DE AUTORES
-        LIVROS *autores =calloc(livros[x].n_autores,sizeof(tipo_autores)); 
-        
+        //NUMERO DINAMICO DE AUTORES
+        LIVROS *autores = calloc(livros[x].n_autores, sizeof (tipo_autores));
+
         for (int j = 0; j < livros[x].n_autores; j++) {
             printf("Autor[%i]\n ", j + 1);
             lerString(livros[x].autores[j].autores, MAX_CHAR_AUTORES, OBTER_NOME_AUTORES);
         }
         livros[x].flag = 1;
         livros[0].contador++;
+        free(autores);
 
-        livros = realloc(livros, sizeof (LIVROS)*2);
     }
 
 }
@@ -392,23 +408,21 @@ void LerFicheiro_Binario(LIVROS *livros, FILE *fp) {
         x += livros->contador;
     }
     printf("\nLido: %i", x);
+    livros[0].contador = x;
+    printf("\nLIVRO CONTADOR: %i", livros[0].contador);
     rewind(fp);
-    if(TAMANHO_INICIAL<x){
-        livros = realloc(livros, sizeof (LIVROS)*2);
+    if (TAMANHO_INICIAL < x) {
+        livros = (LIVROS*) realloc(livros, sizeof (LIVROS)*2);
     }
     fread(livros, sizeof (LIVROS), x, fp);
-    livros[0].contador = x;
-
-
     fclose(fp);
 }
-
 
 void EscreverFicheiro_Binario(LIVROS *livros, FILE *fp) {
     fp = fopen(FILENAME, "wb");
     int x;
     x = livros[0].contador;
-    
+
     fwrite(livros, sizeof (LIVROS), x, fp);
 
 

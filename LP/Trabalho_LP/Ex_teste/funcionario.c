@@ -118,8 +118,9 @@ int Procurar_CodFuncionario(FUNCIONARIO funcionarios[], int numero, int tamanho)
 }
 
 void Inserir_Funcionario(FUNCIONARIO *funcionarios) {
-    int aux;
+    int aux,i;
     int contador = funcionarios[0].contador;
+       
     printf("\nInserir Funcionario");
 
     printf("\nCodigo");
@@ -178,9 +179,9 @@ void Inserir_Funcionario(FUNCIONARIO *funcionarios) {
         funcionarios[contador].data_de_entrada.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_ENTRADA);
 
         funcionarios[contador].flag = 1;
-        funcionarios[0].contador++;
-        // if(contador%2 ==1)
-        //funcionarios = realloc(funcionarios, sizeof (FUNCIONARIO)*contador);
+         funcionarios[0].contador++;
+         if(contador-1 >TAMANHO_INICIAL)
+        funcionarios = realloc(funcionarios, sizeof (FUNCIONARIO)*2);
     }
 }
 
@@ -403,9 +404,7 @@ void LerFicheiro_Binario(FUNCIONARIO *funcionarios, FILE *fp) {
         x += funcionarios->contador;
     }
     rewind(fp);
-    if (TAMANHO_INICIAL < x) {
-        funcionarios = (FUNCIONARIO*) realloc(funcionarios, sizeof (FUNCIONARIO)*(funcionarios[0].contador + 1)*2);
-    }
+    
     fread(funcionarios, sizeof (FUNCIONARIO), x, fp);
     funcionarios[0].contador = x;
 

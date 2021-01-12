@@ -24,52 +24,55 @@ int main() {
 
     int menu, x;
 
-    ALUNO *alunos = calloc(TAMANHO_INICIAL, sizeof (ALUNO));
+    ALUNO *alunos;
     FILE *fp;
+LerFicheiro(fp);
+/*
+    if (carregar(&alunos)) {
+        do {
+            printf("\nCONTADOR: %d", alunos[0].contador);
+            printf("\n\nMENU");
+            printf("\n1- Inserir Aluno");
+            printf("\n2- Listar todos os alunos");
+            printf("\n3- Consultar aluno");
+            printf("\n4- Atualizar dados aluno");
+            printf("\n5- Eliminar aluno");
+            printf("\n6- Carregar Ficheiro");
+            printf("\n7- Imprimir no Ficheiro");
+            printf("\n0 - Sair\n");
+            scanf("%i", &menu);
+            switch (menu) {
+                case 1:
+                    Inserir(&alunos);
+                    break;
+                case 2:
+                    Listar(alunos);
+                    break;
+                case 3:
+                    Consulta(alunos);
+                    break;
+                case 4:
+                    Atualizar(alunos);
+                    break;
+                case 5:
+                    Eliminar(alunos);
+                    break;
+                case 6:
+                    //LerFicheiro_Binario(alunos, fp);
+                    break;
 
-    if (alunos == NULL)printf("\nCouldn't allocate memory");
+                case 7:
+                    EscreverFicheiro_Binario(alunos, fp);
+                    break;
 
-    do {
-        printf("\nCONTADOR: %d", alunos[0].contador);
-        printf("\n\nMENU");
-        printf("\n1- Inserir Aluno");
-        printf("\n2- Listar todos os alunos");
-        printf("\n3- Consultar aluno");
-        printf("\n4- Atualizar dados aluno");
-        printf("\n5- Eliminar aluno");
-        printf("\n6- Carregar Ficheiro");
-        printf("\n7- Imprimir no Ficheiro");
-        printf("\n0 - Sair\n");
-        scanf("%i", &menu);
-        switch (menu) {
-            case 1:
-                Inserir(alunos);
-                break;
-            case 2:
-                Listar(alunos);
-                break;
-            case 3:
-                Consulta(alunos);
-                break;
-            case 4:
-                Atualizar(alunos);
-                break;
-            case 5:
-                Eliminar(alunos);
-                break;
-            case 6:
-              LerFicheiro_Binario(alunos,fp);  
-                break;
+                case 0:
+                    break;
 
-            case 7:
-                EscreverFicheiro_Binario(alunos,fp);
-                break;
+            }
+        } while (menu != 0);
+    }
+*/
 
-            case 0:
-                break;
-
-        }
-    } while (menu != 0);
 
     free(alunos);
     return 0;

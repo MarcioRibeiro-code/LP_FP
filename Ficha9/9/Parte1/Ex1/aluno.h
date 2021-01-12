@@ -13,19 +13,19 @@
 
 #ifndef ALUNO_H
 #define ALUNO_H
-#define FILENAME "lib_aluno.txt"
+#define FILENAME "lib_aluno.bin"
+#define FILENAME_TXT "lib_aluno.txt"
 #define FILENAME_LOG "log.txt"
 #define TAMANHO_INICIAL 2
 
 #include <time.h>
-
 
 typedef struct {
     int dia, mes, ano;
 } data;
 
 typedef struct {
-    int contador, flag;
+    int contador, flag, tamanho;
     int num;
     char nome[30];
     data Data;
@@ -53,23 +53,24 @@ void logMsg(char *msg, char *filename) {
     fclose(fp);
 }
 
-void Inserir(ALUNO *alunos) {
-    int x = alunos[0].contador;
+void Inserir(ALUNO **alunos) {
+    int x = (*alunos)[0].contador;
+    *alunos = (ALUNO*) realloc(*alunos, sizeof (ALUNO)*2);
 
-    alunos[x].num = x;
-    alunos[x].flag = 1;
+    (*alunos)[x].num = x;
+    (*alunos)[x].flag = 1;
     printf("Nome: ");
-    scanf(" %[^\n]", alunos[x].nome);
+    scanf(" %[^\n]", (*alunos)[x].nome);
     printf("Data de Nascimento\n");
     printf("DIA: ");
-    scanf("%d", &alunos[x].Data.dia);
+    scanf("%d", &(*alunos)[x].Data.dia);
     printf("MES: ");
-    scanf("%d", &alunos[x].Data.mes);
+    scanf("%d", &(*alunos)[x].Data.mes);
     printf("ANO: ");
-    scanf("%d", &alunos[x].Data.ano);
-    alunos[0].contador++;
+    scanf("%d", &(*alunos)[x].Data.ano);
+    (*alunos)[0].contador++;
 
-    alunos = realloc(alunos, sizeof (ALUNO)*2);
+
 }
 
 int ProcurarAluno(ALUNO alunos[], int x, int aux) {
@@ -83,19 +84,30 @@ int ProcurarAluno(ALUNO alunos[], int x, int aux) {
     return -1;
 }
 
+void imprimir(ALUNO *alunos, int contador) {
+
+    if (alunos[contador].flag == 1) {
+        printf("\nAluno [%i]", alunos[contador].num);
+        printf("\nNOME: %s", alunos[contador].nome);
+        printf("\nData de Nascimento: %d-%d-%d", alunos[contador].Data.dia,
+                alunos[contador].Data.mes, alunos[contador].Data.ano);
+    }
+
+    if (alunos[contador].flag == 0) {
+
+        printf("\nAluno [%i]", alunos[contador].num);
+        printf("\nInativo");
+    }
+
+}
+
 void Listar(ALUNO *alunos) {
     int x = alunos[0].contador;
     printf("Listar ALUNOS");
 
     for (int i = 0; i < x; ++i) {
-        if (alunos[i].flag == 1) {
-            printf("\n\nAluno [%i]", i);
-            printf("\nNOME: %s", alunos[i].nome);
-            printf("\nData de Nascimento: %d-%d-%d", alunos[i].Data.dia, alunos[i].Data.mes, alunos[i].Data.ano);
-        } else {
-            printf("\nAluno [%i]", i);
-            printf("\nInativo");
-        }
+        imprimir(alunos, i);
+        printf("\n");
     }
 }
 
@@ -111,14 +123,8 @@ void Consulta(ALUNO *alunos) {
 
 
     for (int i = 0; i < x; i++) {
-        if (aux == i && alunos[i].flag == 1) {
-            printf("\nAluno [%i]", alunos[i].num);
-            printf("\nNOME: %s", alunos[i].nome);
-            printf("\nData de Nascimento: %d-%d-%d", alunos[i].Data.dia,
-                    alunos[i].Data.mes, alunos[i].Data.ano);
-        } else {
-            printf("\nAluno [%i]", alunos[i].num);
-            printf("\nInativo");
+        if (aux == i) {
+            imprimir(alunos, aux);
         }
     }
 }
@@ -132,60 +138,61 @@ void Atualizar(ALUNO *alunos) {
     printf("\nNum do aluno: ");
     scanf(" %i", &num);
     aux = ProcurarAluno(alunos, x, num);
-    do {
-        Listar(alunos);
+    if (aux != -1) {
+        do {
+            Listar(alunos);
 
 
 
-        printf("\n--Alterar--\n"
-                "1.Nome\n"
-                "2.Data de Nascimento\n"
-                "0.acabar\n: ");
-        scanf("%d", &op);
-        switch (op) {
-            case 1:
-                for (int i = 0; i < x; i++) {
-                    if (i == aux) {
-                        printf("\nNOME: ");
-                        scanf("%[^\n]s", alunos[aux].nome);
-                    }
-                }
-                break;
-            case 2:
+            printf("\n--Alterar--\n"
+                    "1.Nome\n"
+                    "2.Data de Nascimento\n"
+                    "0.acabar\n: ");
+            scanf("%d", &op);
+            switch (op) {
+                case 1:
 
-                for (int i = 0; i < x; i++) {
-                    if (aux == i) {
-                        printf("\nData de Nascimento");
-                        printf("DIA: ");
-                        scanf("%i", &alunos[aux].Data.dia);
-                        printf("MES: ");
-                        scanf("%i", &alunos[aux].Data.mes);
-                        printf("ANO: ");
-                        scanf("%i", &alunos[aux].Data.ano);
-                    }
-                }
-                break;
+                    printf("\nNOME: ");
+                    scanf(" %[^\n]s", alunos[aux].nome);
 
-            case 0:
-                break;
-        }
-    } while (op != 0);
+
+                    break;
+                case 2:
+                    printf("\nData de Nascimento");
+                    printf("DIA: ");
+                    scanf("%i", &alunos[aux].Data.dia);
+                    printf("MES: ");
+                    scanf("%i", &alunos[aux].Data.mes);
+                    printf("ANO: ");
+                    scanf("%i", &alunos[aux].Data.ano);
+                    break;
+
+                case 0:
+                    break;
+            }
+        } while (op != 0);
+    }
+
+
 }
 
 void Eliminar(ALUNO *alunos) {
     int x = alunos[0].contador;
 
-    int num, aux, op;
+    int num, contador, op;
 
+    Listar(alunos);
     printf("\n\nConsultar Aluno");
     printf("\nNum do aluno: ");
     scanf(" %i", &num);
-    aux = ProcurarAluno(alunos, x, num);
+    contador = ProcurarAluno(alunos, x, num);
 
-    Listar(alunos);
-    printf("\nAluno a remover: ");
+    if (contador != -1) {
+        printf("\nAluno removido: %i", alunos[contador].num);
 
-    alunos[aux].flag = 0;
+        alunos[contador].flag = 0;
+    }
+
     Listar(alunos);
 
 }
@@ -204,8 +211,44 @@ int StringToInteger(char* string) {
     return digit;
 }
 
-void LerFicheiro(ALUNO *alunos, FILE *fp) {
-    fp = fopen(FILENAME, "r");
+int carregar(ALUNO **alunos) {
+
+    int returno = 0;
+    int contador = 0;
+
+    FILE *fp = fopen(FILENAME, "rb");
+
+    if (fp != NULL) {
+        fread(&contador, sizeof (int), 1, fp);
+        rewind(fp);
+        if (contador > 0) {
+            *alunos = (ALUNO*) malloc(contador * sizeof (ALUNO));
+            fread(*alunos, sizeof (ALUNO), contador, fp);
+            (*alunos)[0].tamanho = (*alunos)[0].contador = contador;
+            printf("contador : %i", (*alunos)[0].contador);
+            returno = 1;
+
+        }
+        fclose(fp);
+        if (!returno) {
+            fp = fopen(FILENAME, "wb");
+            if (fp != NULL) {
+                *alunos = (ALUNO*) malloc(TAMANHO_INICIAL * sizeof (ALUNO));
+                contador = 0;
+                (*alunos)[0].contador = contador;
+                (*alunos)[0].tamanho = TAMANHO_INICIAL;
+                fclose(fp);
+
+                returno = 1;
+            }
+
+        }
+    }
+    return returno;
+}
+
+void LerFicheiro(FILE *fp) {
+    fp = fopen(FILENAME_TXT, "r");
 
     if (!fp) {
         printf("\nError occured");
@@ -226,42 +269,47 @@ void LerFicheiro(ALUNO *alunos, FILE *fp) {
 
         while (field) {
             if (field_count == 0)
-                strncpy(values[i].contador, field, 50);
-            alunos[i].contador = StringToInteger(values[i].contador);
+                strcpy(values[i].contador, field);
+
 
             if (field_count == 1)
-                strncpy(values[i].flag, field, 50);
-            alunos[i].flag = StringToInteger(values[i].flag);
+                strcpy(values[i].flag, field);
 
             if (field_count == 2)
-                strncpy(values[i].num, field, 50);
-            alunos[i].num = StringToInteger(values[i].num);
+                strcpy(values[i].num, field);
+
 
             if (field_count == 3)
-                strncpy(values[i].nome, field, 50);
-            strncpy(alunos[i].nome, values[i].nome, 50);
+                strcpy(values[i].nome, field);
+
 
             if (field_count == 4)
-                strncpy(values[i].data_d, field, 3);
-            alunos[i].Data.dia = atoi(values[i].data_d);
+                strcpy(values[i].data_d, field);
+
 
             if (field_count == 5)
-                strncpy(values[i].data_m, field, 3);
-            alunos[i].Data.mes = atoi(values[i].data_m);
+                strcpy(values[i].data_m, field);
+
 
             if (field_count == 6)
-                strncpy(values[i].data_a, field, 5);
-            alunos[i].Data.ano = atoi(values[i].data_a);
+                strcpy(values[i].data_a, field);
+
 
 
             field = strtok(NULL, ",");
             field_count++;
+            i++;
         }
-        alunos = realloc(alunos, sizeof (ALUNO)*2);
-        i++;
+        for (int j = 0; j < i; j++) {
+            printf("col1: %s ,col2: %s ,col3: %s ,col4: %s ",
+                    values[i].contador, values[i].flag, values[i].num, values[i].nome);
+        }
     }
     fclose(fp);
-    Listar(alunos);
+    printf("CONTADOR: %i", i);
+
+
+    //Listar(alunos);
 }
 
 void LerFicheiro_Binario(ALUNO *alunos, FILE *fp) {
@@ -279,7 +327,7 @@ void LerFicheiro_Binario(ALUNO *alunos, FILE *fp) {
     }
     printf("\nLido: %i", x);
     rewind(fp);
-    if(TAMANHO_INICIAL<x){
+    if (TAMANHO_INICIAL < x) {
         alunos = realloc(alunos, sizeof (ALUNO)*2);
     }
     fread(alunos, sizeof (ALUNO), x, fp);
@@ -289,26 +337,24 @@ void LerFicheiro_Binario(ALUNO *alunos, FILE *fp) {
     fclose(fp);
 }
 
-void EscreverFicheiro(ALUNO *alunos,FILE *fp){
-    fp =fopen(FILENAME,"w");
+void EscreverFicheiro(ALUNO *alunos, FILE *fp) {
+    fp = fopen(FILENAME, "w");
     int x;
-    x=alunos[0].contador;
-    
-       for (int i = 0; i < x; i++) {
-           fprintf(fp, "%d,%d,%d,", alunos[i].contador, alunos[i].flag, alunos[i].num);
-           fprintf(fp, "%s,", alunos[i].nome);
-           fprintf(fp, "%d,%d,%d\n", alunos[i].Data.dia, alunos[i].Data.mes, alunos[i].Data.ano);
-       }
+    x = alunos[0].contador;
+
+    for (int i = 0; i < x; i++) {
+        fprintf(fp, "%d,%d,%d,", alunos[i].contador, alunos[i].flag, alunos[i].num);
+        fprintf(fp, "%s,", alunos[i].nome);
+        fprintf(fp, "%d,%d,%d\n", alunos[i].Data.dia, alunos[i].Data.mes, alunos[i].Data.ano);
+    }
     fclose(fp);
 }
-
-
 
 void EscreverFicheiro_Binario(ALUNO *alunos, FILE *fp) {
     fp = fopen(FILENAME, "wb");
     int x;
     x = alunos[0].contador;
-    
+
     fwrite(alunos, sizeof (ALUNO), x, fp);
 
 

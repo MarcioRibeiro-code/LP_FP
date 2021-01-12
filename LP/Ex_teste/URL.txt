@@ -1,0 +1,4 @@
+https://stackoverflow.com/questions/22596872/reading-from-random-access-file-in-c
+
+
+Para o calculo da segurança social.

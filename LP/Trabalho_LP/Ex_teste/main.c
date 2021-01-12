@@ -213,7 +213,8 @@ void parsecsv(dict values[], int x) {
 int main() {
     int menu, x;
     FILE *fp;
-/*
+
+   /*
     FUNCIONARIO *funcionarios = calloc(TAMANHO_INICIAL, sizeof (FUNCIONARIO));
 
 
@@ -233,7 +234,7 @@ int main() {
         scanf("%i", &menu);
         switch (menu) {
             case 1:
-                funcionarios = (FUNCIONARIO*) realloc(funcionarios, sizeof (FUNCIONARIO)*(funcionarios[0].contador + 1)*2);
+                //funcionarios = (FUNCIONARIO*) realloc(funcionarios, sizeof (FUNCIONARIO)*(funcionarios[0].contador + 1)*2);
                 Inserir_Funcionario(funcionarios);
 
                 break;
@@ -263,9 +264,28 @@ int main() {
 
         }
     } while (menu != 0);
-
-*/
-    calcular_ss();
+*/ 
+    
+    
+    DATA data1;
+    DATA data2;
+    
+    data1.ano=2020;
+    data1.mes=12;
+    data1.dia=20;
+    data2.ano=2021;
+    data2.mes=1;
+    data2.dia=3;
+    
+    int aux1,aux2;
+    
+    aux1=(data1.ano*365+data1.mes*30+data1.dia);
+    aux2=(data2.ano*365+data2.mes*30+data2.dia);
+    
+    printf("DATA1: %i",aux1);
+    printf("DATA2: %i",aux2);
+   
+    
 
 
 

@@ -32,7 +32,7 @@ int main() {
  
     int menu,x;
     
-    LIVROS *livros = calloc(TAMANHO_INICIAL,sizeof(LIVROS));
+    LIVROS *livros = (LIVROS*)calloc(TAMANHO_INICIAL,sizeof(LIVROS));
     FILE *fp;
     
     if(livros == NULL) faill();
@@ -51,6 +51,7 @@ int main() {
         scanf("%i", &menu);
         switch (menu) {
             case 1:
+                livros = (LIVROS*)realloc(livros, sizeof (LIVROS)*(2));
                 Inserir(livros);
                 break;
             case 2:
