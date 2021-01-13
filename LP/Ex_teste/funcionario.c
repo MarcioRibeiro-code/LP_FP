@@ -565,7 +565,7 @@ void readcsv(dict *values, int est_irs) {
     }
     x = i;
     fclose(fp);
-    printValues_IRS(values);
+    //printValues_IRS(values);
 }
 
 void readcsv_seg_social(SS values[]) {
@@ -612,9 +612,9 @@ void printValues(SS *values) {
 }
 
 void imprimirSalario(SALARIO **salario, int i) {
-
-    printf("\nCodigo Funcionario: %i", (*salario)[i].codigo_funcionario);
-    printf("\nNumero de Meses: %i", (*salario)[i].num_meses);
+    printf("\n");
+    printf("\nFuncionario [%i]", (*salario)[i].codigo_funcionario);
+    //printf("\nNumero de Meses: %i", (*salario)[i].num_meses);
     printf("\nDias de trabalho: %i", (*salario)[i].num_dias);
     printf("\nSalario base: %.2f", (*salario)[i].base);
     printf("\nSubsidio de Alimentação: %.2f", (*salario)[i].sub_alimentacao);
@@ -623,11 +623,8 @@ void imprimirSalario(SALARIO **salario, int i) {
     printf("\nSegurança Social: Empresa -> %.2f", (*salario)[i].ss.valor_ss_empresa);
     printf("\nIRS: %.2f", (*salario)[i].valor_irs);
 
-    printf("\nDATA");
-    printf("\n DIA: %i", (*salario)[i].data.dia);
-    printf("\n MES: %i", (*salario)[i].data.mes);
-    printf("\n ANO: %i", (*salario)[i].data.ano);
-
+    printf("\nData Salario: %i-%i-%i", (*salario)[i].data.dia, (*salario)[i].data.mes, (*salario)[i].data.ano);
+    printf("\n-------------------------");
     printf("\nValor Liquido: %.2f", (*salario)[i].valor_liquido);
 }
 
@@ -644,6 +641,33 @@ int Procurar_CodFuncionario_Salario(SALARIO **salario, int cod_func, int tamanho
 
 
     return -1;
+}
+
+int Procurar_CodFuncionario_Salario_ultimaposicao(SALARIO **salario, int cod_func, int tamanho) {
+
+    int i;
+    int aux = -1;
+
+    int data_aux = 0;
+    int data;
+
+    for (i = 0; i < tamanho; i++) {
+        if ((*salario)[i].codigo_funcionario == cod_func) {
+
+
+            data = ((365 * (*salario)[i].data.ano)+(30 * (*salario)[i].data.mes)
+                    + (*salario)[i].data.dia);
+
+            if (data > data_aux) {
+                data_aux = data;
+                aux = i;
+            }
+
+        }
+    }
+
+
+    return aux;
 }
 
 //trocar nome teste 
@@ -870,16 +894,16 @@ float salario_bonus(FUNCIONARIO **funcionarios, SALARIO **salario, float sal_bas
     //numero de vezes que o funcionario trabalhou >= 22 dias; -> frequencia
 
     if (num_vezes_dias >= 3 && num_vezes_dias < 5) {
-        printf("opção 1");
+        //printf("opção 1");
         sal_base = sal_base * 1.023;
     } else if (num_vezes_dias >= 5 && num_vezes_dias < 7) {
-        printf("opção 2");
+        //printf("opção 2");
         sal_base = sal_base * 1.041;
     } else if (num_vezes_dias >= 7) {
-        printf("opção 3");
+        //printf("opção 3");
         sal_base = sal_base * 1.067;
     } else {
-        printf("opção 4");
+        //printf("opção 4");
 
         sal_base = sal_base * 1;
     }
@@ -934,12 +958,12 @@ float calcular_salarioBase(FUNCIONARIO **funcionarios, int numero, int num_dias)
 float calcular_irs(FUNCIONARIO **funcionarios, int numero, float sal_base) {
 
     int est_irs = (*funcionarios)[numero].est_irs;
-    printf("\nESTADO IRS: %i", est_irs);
+    // printf("\nESTADO IRS: %i", est_irs);
     dict values[50];
     int flag = 0;
-    printf("\nNUMERO: %i", numero);
-    printf("\nSalario Base: %f", sal_base);
-    printf("\nDEPENDENTES: %i", (*funcionarios)[numero].num_dependentes);
+    //printf("\nNUMERO: %i", numero);
+    //printf("\nSalario Base: %f", sal_base);
+    //printf("\nDEPENDENTES: %i", (*funcionarios)[numero].num_dependentes);
     float val = 0;
 
     if (est_irs == 0) { // NAO CASADO
@@ -1245,6 +1269,8 @@ void Calcular_Salario_tdsfunc(FUNCIONARIO **funcionarios, SALARIO **salario, int
     (*salario)[salario_contador].codigo_funcionario =
             (*funcionarios)[posicao_funcionario].codigo;
 
+
+    printf("\nFuncionario [%i]", (*salario)[salario_contador].codigo_funcionario);
     (*salario)[salario_contador].num_dias = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
 
     (*salario)[salario_contador].base = calcular_salarioBase(funcionarios,
@@ -1297,7 +1323,7 @@ void calcular_salario_tdsfunc_nummes(FUNCIONARIO **funcionarios, SALARIO **salar
 
     for (j = 0; j < func_contador; j++) {
         if (Procurar_CodFuncionario_Salario(salario, (*funcionarios)[j].codigo, salario_contador) != -1) {
-            int codigo_func_salario = Procurar_CodFuncionario_Salario(salario, (*funcionarios)[j].codigo, salario_contador);
+            int codigo_func_salario = Procurar_CodFuncionario_Salario_ultimaposicao(salario, (*funcionarios)[j].codigo, salario_contador);
 
             int max_aux = 0;
             int max = ((365 * (*salario)[codigo_func_salario].data.ano)
@@ -1311,13 +1337,13 @@ void calcular_salario_tdsfunc_nummes(FUNCIONARIO **funcionarios, SALARIO **salar
             }
 
             if ((data_atual - max) > MAX_DIA) {
-                Calcular_Salario_tdsfunc(funcionarios,salario,j);
-            }else{
+                Calcular_Salario_tdsfunc(funcionarios, salario, j);
+            } else {
                 continue;
             }
 
-        }else{
-            Calcular_Salario_tdsfunc(funcionarios,salario,j);
+        } else {
+            Calcular_Salario_tdsfunc(funcionarios, salario, j);
         }
 
     }
@@ -1362,9 +1388,8 @@ void LerFicheiro_Binario_Salario(SALARIO *salario) {
 
 void Calcular_Salario(FUNCIONARIO **funcionarios, SALARIO **salario) {
 
-
     int salario_contador = (*salario)[0].contador;
-
+    int dia, mes, ano;
 
     if (salario_contador == (*salario)[0].tamanho) {
         (*salario)[0].tamanho = grow_StructArray_Salario(salario);
@@ -1374,59 +1399,123 @@ void Calcular_Salario(FUNCIONARIO **funcionarios, SALARIO **salario) {
     int codigo_funcionario = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC,
             MSG_OBTER_COD_FUNC); // Introduzir o codigo do funcionario para fazer a pesquisa - se existe ou nao na tabela
 
-
     int posicao_funcionario = Procurar_CodFuncionario(funcionarios,
             codigo_funcionario, func_contador); //devolve a posicao do certo codigo na tabela(array) funcionarios
 
     if (posicao_funcionario != -1) {
-        (*salario)[salario_contador].codigo_funcionario =
-                (*funcionarios)[posicao_funcionario].codigo;
+        if (Procurar_CodFuncionario_Salario(salario, codigo_funcionario, salario_contador) != -1) {
+            int codigo_func_salario = Procurar_CodFuncionario_Salario_ultimaposicao(salario, codigo_funcionario, salario_contador);
+            int max_aux = 0;
+            dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_SALARIO); // DEVOLVE TEMPO -> funcao 
+            mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_SALARIO);
+            ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_SALARIO);
+            if (ano >= (*funcionarios)[posicao_funcionario].data_de_entrada.ano) {
+                int max = ((365 * ano)+
+                        (30 * mes) +
+                        dia);
 
-        (*salario)[salario_contador].num_dias = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
+                int ultima_data = ((365 * (*salario)[codigo_func_salario].data.ano) +(30 * (*salario)[codigo_func_salario].data.mes) + (*salario)[codigo_func_salario].data.dia);
 
-        (*salario)[salario_contador].base = calcular_salarioBase(funcionarios,
-                posicao_funcionario, (*salario)[salario_contador].num_dias);
 
-        (*salario)[salario_contador].base = salario_bonus(funcionarios, salario,
-                (*salario)[salario_contador].base, posicao_funcionario);
 
-        (*salario)[salario_contador].sub_alimentacao =
-                (*salario)[salario_contador].num_dias * VALOR_SUBSIDIO_ALIMENTACAO;
+                if (abs((max - ultima_data)) > MAX_DIA) {
+                    (*salario)[salario_contador].codigo_funcionario =
+                            (*funcionarios)[posicao_funcionario].codigo;
 
-        (*salario)[salario_contador].valor_irs =
-                calcular_irs(funcionarios, posicao_funcionario, (*salario)[salario_contador].base);
+                    (*salario)[salario_contador].num_dias = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
 
-        (*salario)[salario_contador].ss.valor_ss_funcionario =
-                calcular_ss(funcionarios, posicao_funcionario, 0, (*salario)[salario_contador].base);
+                    (*salario)[salario_contador].base = calcular_salarioBase(funcionarios,
+                            posicao_funcionario, (*salario)[salario_contador].num_dias);
 
-        (*salario)[salario_contador].ss.valor_ss_empresa =
-                calcular_ss(funcionarios, posicao_funcionario, 1, (*salario)[salario_contador].base);
+                    (*salario)[salario_contador].base = salario_bonus(funcionarios, salario,
+                            (*salario)[salario_contador].base, posicao_funcionario);
 
-        (*salario)[salario_contador].ss.valor_ss_total =
-                calcular_ss(funcionarios, posicao_funcionario, 2, (*salario)[salario_contador].base);
+                    (*salario)[salario_contador].sub_alimentacao =
+                            (*salario)[salario_contador].num_dias * VALOR_SUBSIDIO_ALIMENTACAO;
 
-        (*salario)[salario_contador].valor_liquido =
-                ((*salario)[salario_contador].base + (*salario)[salario_contador].sub_alimentacao)-
-                ((*salario)[salario_contador].valor_irs + (*salario)[salario_contador].ss.valor_ss_funcionario);
+                    (*salario)[salario_contador].valor_irs =
+                            calcular_irs(funcionarios, posicao_funcionario, (*salario)[salario_contador].base);
 
-        (*salario)[salario_contador].data.dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_SALARIO); // DEVOLVE TEMPO -> funcao 
-        (*salario)[salario_contador].data.mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_SALARIO);
-        (*salario)[salario_contador].data.ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_SALARIO);
+                    (*salario)[salario_contador].ss.valor_ss_funcionario =
+                            calcular_ss(funcionarios, posicao_funcionario, 0, (*salario)[salario_contador].base);
 
-        //Escrever em Csv
-        /*fprintf(fp, "%i;%i;%i;", salario.contador,
-                salario.codigo_funcionario, salario.num_meses);
-        for (int j = 0; j < salario.num_meses; j++) {
-            fprintf(fp, "%i;%f;%f;%f;%f;%f\n", salario.dias[i], salario.base,
-                    salario.ss.valor_ss_total, salario.ss.valor_ss_funcionario, salario.valor_irs, salario.valor_liquido);
-            
-        }*/
+                    (*salario)[salario_contador].ss.valor_ss_empresa =
+                            calcular_ss(funcionarios, posicao_funcionario, 1, (*salario)[salario_contador].base);
 
-        (*salario)[0].contador++;
+                    (*salario)[salario_contador].ss.valor_ss_total =
+                            calcular_ss(funcionarios, posicao_funcionario, 2, (*salario)[salario_contador].base);
+
+                    (*salario)[salario_contador].valor_liquido =
+                            ((*salario)[salario_contador].base + (*salario)[salario_contador].sub_alimentacao)-
+                            ((*salario)[salario_contador].valor_irs + (*salario)[salario_contador].ss.valor_ss_funcionario);
+
+                    (*salario)[salario_contador].data.dia = dia; // DEVOLVE TEMPO -> funcao 
+                    (*salario)[salario_contador].data.mes = mes;
+                    (*salario)[salario_contador].data.ano = ano;
+
+                    (*salario)[0].contador++;
+                }
+            } else {
+                puts("\nDATA INVALIDA -> DATA SALARIO É INFERIOR Á DATA DE ENTRADA DO FUNCIONARIO");
+            }
+        } else {
+
+            dia = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_SALARIO); // DEVOLVE TEMPO -> funcao 
+            mes = obterInt(MIN_MES, MAX_MES, OBTER_MES_SALARIO);
+            ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_SALARIO);
+
+            if (ano >= (*funcionarios)[posicao_funcionario].data_de_entrada.ano) {
+                (*salario)[salario_contador].codigo_funcionario =
+                        (*funcionarios)[posicao_funcionario].codigo;
+
+                (*salario)[salario_contador].num_dias = obterInt(MIN_DIA, MAX_DIA, OBTER_DIA_TRABALHO);
+
+                (*salario)[salario_contador].base = calcular_salarioBase(funcionarios,
+                        posicao_funcionario, (*salario)[salario_contador].num_dias);
+
+                (*salario)[salario_contador].base = salario_bonus(funcionarios, salario,
+                        (*salario)[salario_contador].base, posicao_funcionario);
+
+                (*salario)[salario_contador].sub_alimentacao =
+                        (*salario)[salario_contador].num_dias * VALOR_SUBSIDIO_ALIMENTACAO;
+
+                (*salario)[salario_contador].valor_irs =
+                        calcular_irs(funcionarios, posicao_funcionario, (*salario)[salario_contador].base);
+
+                (*salario)[salario_contador].ss.valor_ss_funcionario =
+                        calcular_ss(funcionarios, posicao_funcionario, 0, (*salario)[salario_contador].base);
+
+                (*salario)[salario_contador].ss.valor_ss_empresa =
+                        calcular_ss(funcionarios, posicao_funcionario, 1, (*salario)[salario_contador].base);
+
+                (*salario)[salario_contador].ss.valor_ss_total =
+                        calcular_ss(funcionarios, posicao_funcionario, 2, (*salario)[salario_contador].base);
+
+                (*salario)[salario_contador].valor_liquido =
+                        ((*salario)[salario_contador].base + (*salario)[salario_contador].sub_alimentacao)-
+                        ((*salario)[salario_contador].valor_irs + (*salario)[salario_contador].ss.valor_ss_funcionario);
+                (*salario)[salario_contador].data.dia = dia; // DEVOLVE TEMPO -> funcao 
+                (*salario)[salario_contador].data.mes = mes;
+                (*salario)[salario_contador].data.ano = ano;
+                (*salario)[0].contador++;
+            } else {
+                puts("\nDATA INVALIDA -> DATA SALARIO É INFERIOR Á DATA DE ENTRADA DO FUNCIONARIO");
+            }
+        }
+
     } else {
-
         puts(ERRO_FUNCIONARIO_NAO_EXISTE);
     }
+
+
+    //Escrever em Csv
+    /*fprintf(fp, "%i;%i;%i;", salario.contador,
+            salario.codigo_funcionario, salario.num_meses);
+    for (int j = 0; j < salario.num_meses; j++) {
+        fprintf(fp, "%i;%f;%f;%f;%f;%f\n", salario.dias[i], salario.base,
+                salario.ss.valor_ss_total, salario.ss.valor_ss_funcionario, salario.valor_irs, salario.valor_liquido);
+            
+    }*/
 }
 
 void listarSalario(SALARIO **salario) {
@@ -1442,6 +1531,69 @@ void listarSalario(SALARIO **salario) {
 
         puts(ERRO_LISTA_SALARIO_VAZIA);
     }
+}
+
+void mediaSalario_det_ano(SALARIO **salario) { //media salarios de um determinado ano
+    int ano_atual = devolve_tempo('A') + 1;
+    int contador = (*salario)[0].contador;
+    int min_data = ano_atual;
+
+    if (contador > 0) {
+        int i, j;
+
+        for (j = 0; j < contador; j++) {
+            if ((*salario)[j].data.ano < min_data) {
+                min_data = (*salario)[j].data.ano;
+            }
+        }
+
+
+        while (min_data != ano_atual) {
+            float soma_salario = 0;
+            int num_salario = 0;
+            for (i = 0; i < contador; i++) {
+                if ((*salario)[i].data.ano == min_data) {
+                    soma_salario += (*salario)[i].valor_liquido;
+                    num_salario++;
+                }
+
+            }
+            printf("Media dos Salarios[%i]: %.2f\n", min_data, soma_salario / num_salario);
+            min_data++;
+        }
+
+    } else {
+        puts(ERRO_LISTA_SALARIO_VAZIA);
+    }
+
+}
+
+void media_numdias(SALARIO **salario) {
+    int contador_salario = (*salario)[0].contador;
+    int i;
+
+
+    if (contador_salario != 0) {
+        int ano = obterInt(MIN_ANO, MAX_ANO, OBTER_ANO_SALARIO);
+        int cod_func = obterInt(MIN_NUM_COD_FUNC, MAX_NUM_COD_FUNC,
+            MSG_OBTER_COD_FUNC);
+        
+        int media_dias,contador=0;
+        
+        for (i = 0; i < contador_salario; i++) {
+            if((*salario)[i].codigo_funcionario == cod_func){
+                media_dias+=(*salario)[i].num_dias;;
+               contador++; 
+            }
+        }
+        printf("\nFUNCIONARIO [%i]",cod_func);
+        printf("Media Dias de trabalho: %i",media_dias/contador);
+        
+    } else {
+        puts(ERRO_LISTA_SALARIO_VAZIA);
+
+    }
+
 }
 
 void mediaSalario(SALARIO **salario) {
@@ -1466,30 +1618,34 @@ void menu_salarios(FUNCIONARIO **funcionarios, SALARIO **salario) {
     do {
         printf("\n%d", (*salario)[0].contador);
         printf("\n\nMENU_SALARIO");
-        printf("\n1- Calcular Salario");
-        printf("\n2- Listar todos os Salarios");
-        printf("\n3- Media dos Salarios");
-        printf("\n4- Soma + todos os salarios de um determinado funcionario");
-        printf("\n5- Guardar");
+        printf("\n1- Calcular Salario -> 1 funcionario");
+        printf("\n2- Calcular Salario todos os funcionarios num mes");
+        printf("\n3- Listar todos os Salarios");
+        printf("\n4- Media dos Salarios");
+        printf("\n5- Soma + todos os salarios de um determinado funcionario");
+        printf("\n6- MEDIA DE UM DETERMINADO ANO");
+        printf("\n7- Guardar");
         printf("\n0 - Sair\n");
         printf("Opção: ");
-        scanf("%i", &menu);
+        menu = obterInt(MIN_OP_MENU_SALARIO, MAX_OP_MENU_SALARIO, "");
         switch (menu) {
             case 1:
                 Calcular_Salario(funcionarios, salario);
                 break;
             case 2:
-                listarSalario(salario);
+                calcular_salario_tdsfunc_nummes(funcionarios, salario);
                 break;
-            case 3:
-                mediaSalario(salario);
+            case 3:listarSalario(salario);
+
                 break;
-            case 4:teste(funcionarios, salario);
+            case 4:mediaSalario(salario);
                 break;
             case 5:
-                EscreverFicheiro_Binario_Salario(salario);
+                teste(funcionarios, salario);
                 break;
-            case 6:
+            case 6:mediaSalario_det_ano(salario);
+                break;
+            case 7:EscreverFicheiro_Binario_Salario(salario);
                 break;
             case 0:
                 break;
@@ -1514,7 +1670,7 @@ void menu_funcionarios(FUNCIONARIO **funcionarios, FILE *fp) {
         printf("\n6- Guardar");
         printf("\n0 - Sair\n");
         printf("Opção: ");
-        scanf("%i", &menu);
+        menu = obterInt(MIN_OP_MENU_FUNCIONARIO, MAX_OP_MENU_FUNCIONARIO, "");
         switch (menu) {
             case 1:
 

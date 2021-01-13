@@ -211,7 +211,7 @@ void parsecsv(dict values[], int x) {
  * 
  */
 int main() {
-    /*
+    
     int menu;
     FILE *fp;
     FUNCIONARIO *funcionarios;
@@ -223,7 +223,7 @@ int main() {
         printf("\n\nMENU");
         printf("\n1- MENU FUNCIONARIO");
         printf("\n2- MENU SALARIOS");
-        scanf("%i", &menu);
+        menu=obterInt(MIN_OP_MENU_PRINCIPAL,MAX_OP_MENU_PRINCIPAL,"");
 
         switch (menu) {
             case 1:menu_funcionarios(&funcionarios, fp);
@@ -235,10 +235,8 @@ int main() {
     } while (menu != 0);
     free(funcionarios);
     free(salario);
-     */
     
-    printf("DIA:%i MES:%i ANO:%i",devolve_tempo('D'),devolve_tempo('M'),devolve_tempo('A'));
-    
+   
     
     return 0;
 }
