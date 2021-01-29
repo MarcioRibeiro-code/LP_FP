@@ -1,0 +1,358 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Documentação Programa LP: Código-Fonte de LP_Projeto/funclib.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Documentação Programa LP
+   &#160;<span id="projectnumber">1.5</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Gerado por Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Localizar','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Localizar');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="dir_a10028fe578e8daceb5b4f6d9bfa05d6.html">LP_Projeto</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">funclib.h</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="funclib_8h.html">Ir para a documentação deste ficheiro.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef FUNCLIB_H</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define FUNCLIB_H</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="funclib_8h.html#aec898d682c160a322bda6456dd9a57cc">    4</a></span>&#160;<span class="preprocessor">#define FILENAME_BIN_FUNCIONARIO &quot;funcionario.dat&quot;</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="funclib_8h.html#a9d7a19842935fde42bf8eaf5809fb6ef">    5</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_nCasado &quot;Tabelas_IRS_2020_nCasado.csv&quot;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="funclib_8h.html#a7d5056cc014944f4b6e11ef79a8c298d">    6</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_1Titular &quot;TABELA_IRS_2020_1TITULAR.csv&quot;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="funclib_8h.html#a49438cb5934bb27aa9633132e5ec8834">    7</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_2Titular &quot;TABELA_IRS_2020_2TITULAR.csv&quot;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="funclib_8h.html#aa719111add397fa49f286d37fe89bc82">    8</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_SS &quot;TABELA_SS_2020.csv&quot;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="funclib_8h.html#a61c9249538b3aa7c2225e4f488a8f394">    9</a></span>&#160;<span class="preprocessor">#define FILENAME_BIN_SALARIO &quot;TABELA_SALARIO.dat&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="funclib_8h.html#a99c48ee309d6f1298a6ea2ccefa53263">   10</a></span>&#160;<span class="preprocessor">#define FILENAME_LOG &quot;LOG.txt&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="funclib_8h.html#af93422ced03de62c3d48f9fe6e5e3d22">   11</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_SALARIO &quot;processamento_salario.csv&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="funclib_8h.html#ac07094cd4f83b31df42342a7926a697e">   12</a></span>&#160;<span class="preprocessor">#define FILENAME_CSV_SALARIO_CONTAS &quot;valores_salarios.csv&quot;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment">//ENUMERAÇOES</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558">   15</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a0e43967b59e254ddbd6c871fdfc45d37">   16</a></span>&#160;    <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a0e43967b59e254ddbd6c871fdfc45d37">CASADO</a>, <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558aa5faf6c887ec07d92be37975829b9a16">DIVORCIADO</a>, <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a541540d87a1edf77d89edabd4badd668">VIUVO</a>, <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a11f74199ef8125a9bd76fa3c654d0e43">SOLTEIRO</a></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a11f74199ef8125a9bd76fa3c654d0e43">   17</a></span>&#160;} <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558">ESTADO_CIVIL</a>;</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="funclib_8h.html#acf4048424379c278f3580634aac37a06">   19</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="funclib_8h.html#acf4048424379c278f3580634aac37a06ad0f74d3939f32cdf6f468e32a99db059">   20</a></span>&#160;    <a class="code" href="funclib_8h.html#acf4048424379c278f3580634aac37a06abddad61176375df57c8242ff8b3d5a3e">EMPREGADO</a>, <a class="code" href="funclib_8h.html#acf4048424379c278f3580634aac37a06ad0f74d3939f32cdf6f468e32a99db059">CHEFE</a>, <a class="code" href="funclib_8h.html#acf4048424379c278f3580634aac37a06ac62cf7b32b3f068e2dcf6856645ccfe4">ADMINISTRADOR</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="funclib_8h.html#acf4048424379c278f3580634aac37a06ac62cf7b32b3f068e2dcf6856645ccfe4">   21</a></span>&#160;} <a class="code" href="funclib_8h.html#acf4048424379c278f3580634aac37a06">CARGO</a>;</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327">   23</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327a02b0de8561e99d55e91806ea6638014c">   24</a></span>&#160;    <a class="code" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327a63edb5e308e500a097634a475c75446f">N_CASADO</a>, <a class="code" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327a02b0de8561e99d55e91806ea6638014c">CASADO_1TITULAR</a>, <a class="code" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327af893772d619c02aa2a3ef3c46c27eb3d">CASADO_2TITULAR</a></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327af893772d619c02aa2a3ef3c46c27eb3d">   25</a></span>&#160;} <a class="code" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327">ESTADO_IRS</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="comment">//______________________________________________________________________</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="comment">//CONSTANTES</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="funclib_8h.html#a2447319b4372b19197e53a4932534ac8">   29</a></span>&#160;<span class="preprocessor">#define LINHAS_CSV 35</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="funclib_8h.html#a9233c901ae69e7e5696fe36658be4679">   30</a></span>&#160;<span class="preprocessor">#define LINHAS_CSV_1titular 36 </span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="funclib_8h.html#afdf2d72d861e216a707160aadeddbc8a">   31</a></span>&#160;<span class="preprocessor">#define MAX_CARACTERES_CSV 10</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="funclib_8h.html#a1eedfb200c0e7e8c40ff6487fac169e4">   33</a></span>&#160;<span class="preprocessor">#define TAMANHO_INICIAL 10</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="funclib_8h.html#a58be2589a319abe68d3e18bbd44c5e54">   35</a></span>&#160;<span class="preprocessor">#define MIN_OP_MENU_FUNCIONARIO 0</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="funclib_8h.html#a5f4c88c692c3fd65cdf559a322a8fde9">   36</a></span>&#160;<span class="preprocessor">#define MAX_OP_MENU_FUNCIONARIO 6</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="funclib_8h.html#aebacdb3d14a13180c933475742949177">   37</a></span>&#160;<span class="preprocessor">#define MIN_OP_MENU_SALARIO 0</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="funclib_8h.html#af0eedab5209d0382d68235096924ff4e">   38</a></span>&#160;<span class="preprocessor">#define MAX_OP_MENU_SALARIO 9</span></div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="funclib_8h.html#a3f31b70eca10e74a693846c961a87e7e">   39</a></span>&#160;<span class="preprocessor">#define MIN_OP_MENU_PRINCIPAL 0</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="funclib_8h.html#a7ceb46cc88b3fb85830915c13a053f51">   40</a></span>&#160;<span class="preprocessor">#define MAX_OP_MENU_PRINCIPAL 2</span></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;<span class="comment">//NUMERO DE FUNCIONARIOS POSSIVEIS NO PROGRAMA</span></div>
+<div class="line"><a name="l00044"></a><span class="lineno"><a class="line" href="funclib_8h.html#a1cdcf9ab06e921379db9bfa5f8804b89">   44</a></span>&#160;<span class="preprocessor">#define MAX_NUM_FUNC 50</span></div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160; </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;<span class="comment">//ERROS</span></div>
+<div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="funclib_8h.html#a90f14e40a4c6abae18ff8794927b1c3a">   47</a></span>&#160;<span class="preprocessor">#define ERRO_FUNCIONARIO_EXISTE &quot;O codigo introduzido já se encontra atribuído.&quot;</span></div>
+<div class="line"><a name="l00048"></a><span class="lineno"><a class="line" href="funclib_8h.html#af9f065cb505eef0ade89aee7b251d93a">   48</a></span>&#160;<span class="preprocessor">#define ERRO_FUNCIONARIO_NAO_EXISTE  &quot;O funcionario não existe na lista.&quot;</span></div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="funclib_8h.html#a5b3712466fe81918338683952d3b2ca8">   49</a></span>&#160;<span class="preprocessor">#define ERRO_LISTA_FUNCIONARIO_VAZIA &quot;A lista de funcionarios está vazia&quot;</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno"><a class="line" href="funclib_8h.html#a069ce8ee552859eb570a9e5351c59c2c">   50</a></span>&#160;<span class="preprocessor">#define ERRO_LISTA_SALARIO_VAZIA &quot;A tabela dos salarios está vazia&quot;</span></div>
+<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="funclib_8h.html#a65d3b21c5bfbd8ac97abd329e5a56ead">   51</a></span>&#160;<span class="preprocessor">#define ERRO_LISTA_CHEIA &quot;A lista de funcionario está cheia.&quot;</span></div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="comment">//NUMERO DE TELEFONE</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="funclib_8h.html#a51e09ea4e305f6d2dc0699d1b1061f54">   55</a></span>&#160;<span class="preprocessor">#define MAX_CHAR_NUM_TLF 9</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="funclib_8h.html#a2ae744c95321ffa5f1b2cf85edf5964d">   56</a></span>&#160;<span class="preprocessor">#define OBTER_TLF_FUNC &quot;Insira o numero de telefone do funcionario: &quot;</span></div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="comment">//NOME FUNCIONARIO</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno"><a class="line" href="funclib_8h.html#ae7f9f902f204fc88f391a3a9668be87d">   59</a></span>&#160;<span class="preprocessor">#define MAX_CHAR_NOME 50</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="funclib_8h.html#ae2dbd4086bf4f19d26622e38fcd57d64">   60</a></span>&#160;<span class="preprocessor">#define OBTER_NOME_FUNC &quot;Insira o nome do funcionario: &quot;</span></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="comment">//DATA DE SAIDA</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno"><a class="line" href="funclib_8h.html#aaed8bd9176291ac1339a51f42d2ef8b9">   63</a></span>&#160;<span class="preprocessor">#define ERRO_DATA_DE_SAIDA &quot;Data de saida está vazia&quot;</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="comment">//CODIGO FUNCIONARIO</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno"><a class="line" href="funclib_8h.html#abc6bd68c7e03745aa96fbb58c8e98b84">   66</a></span>&#160;<span class="preprocessor">#define MIN_NUM_COD_FUNC           0</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno"><a class="line" href="funclib_8h.html#a401bb148b4cd8b338df1197e37a0894c">   67</a></span>&#160;<span class="preprocessor">#define MAX_NUM_COD_FUNC           100</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno"><a class="line" href="funclib_8h.html#a1765c85c6d7d7e404ae4fe6a73236394">   68</a></span>&#160;<span class="preprocessor">#define MSG_OBTER_COD_FUNC     &quot;Insira um codigo para o funcionario [0-100]: &quot;</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="comment">//ESTADO CIVIL FUNCIONARIO</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="funclib_8h.html#a2ea766c0f4785ca4bc7b54a6a2446977">   71</a></span>&#160;<span class="preprocessor">#define MIN_EST_CIVIL 0</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno"><a class="line" href="funclib_8h.html#a651cb587ea5f2dc6334e23cc0dd55601">   72</a></span>&#160;<span class="preprocessor">#define MAX_EST_CIVIL 3</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="funclib_8h.html#ad59ba0598f7dec917bb6580046b903a9">   73</a></span>&#160;<span class="preprocessor">#define OBTER_EST_CIVIL &quot;0 - Casado\n1 - Divorciado\n2 - Viuvo(a)\n3 - Solteiro\nInsira o estado civil do funcionarios [0-3]: &quot;</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="comment">//NUMERO DE DEPENDENTES DO FUNCIONARIO</span></div>
+<div class="line"><a name="l00076"></a><span class="lineno"><a class="line" href="funclib_8h.html#a33011740e81c769001d1d8e694bae249">   76</a></span>&#160;<span class="preprocessor">#define MIN_NUM_DEPENDENTES 0</span></div>
+<div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="funclib_8h.html#a97eb3620b5a5cec8ec783e82a47c3ecf">   77</a></span>&#160;<span class="preprocessor">#define MAX_NUM_DEPENDENTES 20</span></div>
+<div class="line"><a name="l00078"></a><span class="lineno"><a class="line" href="funclib_8h.html#ada788ca547eff147c01dafe8d5b2e4c6">   78</a></span>&#160;<span class="preprocessor">#define OBTER_NUM_DEPENDENTES &quot;Insira o numero de dependentes do funcionario [0-5+]&quot;</span></div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="comment">//ESTADO IRS</span></div>
+<div class="line"><a name="l00081"></a><span class="lineno"><a class="line" href="funclib_8h.html#a40a85fe734e4d4ed708eaa6f8fa12248">   81</a></span>&#160;<span class="preprocessor">#define MIN_EST_IRS 0</span></div>
+<div class="line"><a name="l00082"></a><span class="lineno"><a class="line" href="funclib_8h.html#a387581127c08a9058a5a26ea00ca9c08">   82</a></span>&#160;<span class="preprocessor">#define MAX_EST_IRS 2</span></div>
+<div class="line"><a name="l00083"></a><span class="lineno"><a class="line" href="funclib_8h.html#adfd42a7a0350e42e6a56139b3fa74f6e">   83</a></span>&#160;<span class="preprocessor">#define OBTER_EST_IRS &quot;0 - Não Casado\n1 - Casado 1 Titular\n2 - Casado 2 Titulares[0-3]: &quot;</span></div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160; </div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;<span class="comment">//CARGO DO FUNCIONARIO</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno"><a class="line" href="funclib_8h.html#a467b20808bb76a052cca2a1d7b7a4118">   86</a></span>&#160;<span class="preprocessor">#define MIN_NUM_CARGO 0</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno"><a class="line" href="funclib_8h.html#a77079eddcbfd8354d682e4fd23d25d13">   87</a></span>&#160;<span class="preprocessor">#define MAX_NUM_CARGO 2</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno"><a class="line" href="funclib_8h.html#ad6e3546c0fee00d0aa97965c965c2007">   88</a></span>&#160;<span class="preprocessor">#define OBTER_NUM_CARGO &quot;0 - Empregado\n1 - Chefe\n2 - Administrador\nInsira o cargo do funcionario [0-2]: &quot;</span></div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="comment">//DIA (NASCIMENTO) (ENTRADA/SAIDA EMPRESA)</span></div>
+<div class="line"><a name="l00091"></a><span class="lineno"><a class="line" href="funclib_8h.html#a8d1f443e76253e41d028088667d01705">   91</a></span>&#160;<span class="preprocessor">#define MIN_DIA                 1</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="funclib_8h.html#a63bf2ce2f2b7130c0f5c7c04fd5dd8f9">   92</a></span>&#160;<span class="preprocessor">#define MAX_DIA                 31</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno"><a class="line" href="funclib_8h.html#a099d844c86f9dc59c8d30af1bfc007fa">   93</a></span>&#160;<span class="preprocessor">#define OBTER_DIA_TRABALHO &quot;Nº de dias que trabalhou: &quot;</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno"><a class="line" href="funclib_8h.html#a8e2ac74ac2dc05a8c0323bba0366483b">   94</a></span>&#160;<span class="preprocessor">#define OBTER_DIA_NASC          &quot;Insira o dia de nascimento: &quot;</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno"><a class="line" href="funclib_8h.html#a3eb52aa2134f4c2e7aae2a86a2d731b1">   95</a></span>&#160;<span class="preprocessor">#define OBTER_DIA_ENTRADA &quot;Insira o dia de entrada na empresa: &quot;</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="funclib_8h.html#a7160ad4db0dd89cd428e96e52bd8b8f3">   96</a></span>&#160;<span class="preprocessor">#define OBTER_DIA_SAIDA &quot;Insira o dia de saida da empresa: &quot;</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="funclib_8h.html#a1c29d72122b878a1ea71155fb0930085">   97</a></span>&#160;<span class="preprocessor">#define OBTER_DIA_SALARIO &quot;Insira dia -&gt; Salario: &quot;</span></div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno"><a class="line" href="funclib_8h.html#a809db1131200a1c50356b1bc36610fd0">   99</a></span>&#160;<span class="preprocessor">#define MIN_MES                 1</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno"><a class="line" href="funclib_8h.html#a483736b729190c49a52050522daab25a">  100</a></span>&#160;<span class="preprocessor">#define MAX_MES                 12</span></div>
+<div class="line"><a name="l00101"></a><span class="lineno"><a class="line" href="funclib_8h.html#a537944c404f5f9644ee40c1c5d9dde8e">  101</a></span>&#160;<span class="preprocessor">#define OBTER_MES_TRABALHO &quot;Nº de meses que trabalhou: &quot;</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno"><a class="line" href="funclib_8h.html#aadf6e43d725506b1dfbea68c6c088b37">  102</a></span>&#160;<span class="preprocessor">#define OBTER_MES_NASC          &quot;Insira o mês de nascimento: &quot;</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno"><a class="line" href="funclib_8h.html#a32ff6da660c64260c7fc4eb48def063e">  103</a></span>&#160;<span class="preprocessor">#define OBTER_MES_ENTRADA &quot;Insira o mês de entrada na empresa: &quot;</span></div>
+<div class="line"><a name="l00104"></a><span class="lineno"><a class="line" href="funclib_8h.html#a3bd55a1df27d7d061b109d165a06f569">  104</a></span>&#160;<span class="preprocessor">#define OBTER_MES_SAIDA &quot;Insira o mês de saida da empresa: &quot;</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="funclib_8h.html#addae9abeca1dc256487dae8d49d5c45c">  105</a></span>&#160;<span class="preprocessor">#define OBTER_MES_SALARIO &quot;Insira mes -&gt; Salario: &quot;</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
+<div class="line"><a name="l00107"></a><span class="lineno"><a class="line" href="funclib_8h.html#a715ec15d20019b7a9fd5cb4c4cf8d89b">  107</a></span>&#160;<span class="preprocessor">#define MIN_ANO                 1970</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno"><a class="line" href="funclib_8h.html#a94473d1d56ec7d179e0706516677e6c8">  108</a></span>&#160;<span class="preprocessor">#define MAX_ANO                 2021</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno"><a class="line" href="funclib_8h.html#addb9ca46ab05e6ec35a4e3fd89f7422b">  109</a></span>&#160;<span class="preprocessor">#define OBTER_ANO_NASC          &quot;Insira o ano de nascimento: &quot;</span></div>
+<div class="line"><a name="l00110"></a><span class="lineno"><a class="line" href="funclib_8h.html#a432438d6050fbd82cfc3af274eede493">  110</a></span>&#160;<span class="preprocessor">#define OBTER_ANO_ENTRADA &quot;Insira o ano de entrada na empresa: &quot;</span></div>
+<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="funclib_8h.html#ac3e948bab9e45073690682f8ec4c0a9b">  111</a></span>&#160;<span class="preprocessor">#define OBTER_ANO_SAIDA &quot;Insira o ano de saida da empresa: &quot;</span></div>
+<div class="line"><a name="l00112"></a><span class="lineno"><a class="line" href="funclib_8h.html#a0120ee1dd6cdbcf17ffb2bc28b4f8e0a">  112</a></span>&#160;<span class="preprocessor">#define OBTER_ANO_SALARIO &quot;Insira ano -&gt; Salario: &quot;</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="funclib_8h.html#ac3dc1209d2403650eda0f5cec7866e7c">  114</a></span>&#160;<span class="preprocessor">#define MIN_VERIFICACAO_SAIDA 0</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno"><a class="line" href="funclib_8h.html#a6f27acb42505537c16401f1b647cedb7">  115</a></span>&#160;<span class="preprocessor">#define MAX_VERIFICACAO_SAIDA 1</span></div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="funclib_8h.html#aefee0fab3bcd4d93fd91d79235388303">  116</a></span>&#160;<span class="preprocessor">#define OBTER_VALOR_VERIFICACAO_SAIDA &quot;Pertente atualizar a data de saida\n0 - NAO\n1 - SIM\n&quot;</span></div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="comment">//OPCAO DATA -&gt; SWITCH CASE DA FUNCAO ATUALIZAR DATA DE NASCIMENTO/ENTRADA</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno"><a class="line" href="funclib_8h.html#a14415c80d6e030554e1317c2abeab2f3">  119</a></span>&#160;<span class="preprocessor">#define MIN_OPCAO_DATA 0</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="funclib_8h.html#a65b2dfddeffd802dfd2c1b2c44ff0ef0">  120</a></span>&#160;<span class="preprocessor">#define MAX_OPCAO_DATA 3</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="funclib_8h.html#a16f912fa2f8263ca3c4e03fa57af0a96">  121</a></span>&#160;<span class="preprocessor">#define OBTER_OPCAO_DATA &quot;\n1-DIA\n2-MES\n3-ANO\n0-SAIR\nOpção: &quot;</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;<span class="comment">//_______________________________________________________________________</span></div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;<span class="comment">//VALOR SALARIO</span></div>
+<div class="line"><a name="l00126"></a><span class="lineno"><a class="line" href="funclib_8h.html#a3e16b16093a35695ab6907e9e367fa83">  126</a></span>&#160;<span class="preprocessor">#define VALOR_HORA_EMPREGADO 4.589</span></div>
+<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="funclib_8h.html#af2aaec79878af74684c9adceeab07105">  127</a></span>&#160;<span class="preprocessor">#define VALOR_HORA_ADMINISTRADOR 7.923</span></div>
+<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="funclib_8h.html#ab6f2cd7217be68e05f9020f56ea9cb59">  128</a></span>&#160;<span class="preprocessor">#define VALOR_HORA_CHEFE 19.615</span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="funclib_8h.html#a0287b12fc6cf94de668e502bdf27681c">  129</a></span>&#160;<span class="preprocessor">#define VALOR_SUBSIDIO_ALIMENTACAO 4.77</span></div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="comment">//------------------------------------------------------------------------</span></div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;<span class="comment">//ESTRUTURAS</span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="struct_d_a_t_a.html">  133</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="struct_d_a_t_a.html#ac404d93cbf0169fd9e89edc17d0c5572">  134</a></span>&#160;    <span class="keywordtype">int</span> dia, mes, <a class="code" href="struct_d_a_t_a.html#ac404d93cbf0169fd9e89edc17d0c5572">ano</a>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;} <a class="code" href="struct_d_a_t_a.html">DATA</a>;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">  137</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a2c6a3fb7cddd9bd7254692264962b5b3">  138</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a2c6a3fb7cddd9bd7254692264962b5b3">contador</a>, flag, tamanho;</div>
+<div class="line"><a name="l00139"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a1dca404df9f3a324448195a8d8a74a6c">  139</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a1dca404df9f3a324448195a8d8a74a6c">codigo</a>; <span class="comment">//funcionario_codigo</span></div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#aa8fa33277eccaddb4bd77593474559f4">  140</a></span>&#160;    <span class="keywordtype">char</span> nome[<a class="code" href="funclib_8h.html#ae7f9f902f204fc88f391a3a9668be87d">MAX_CHAR_NOME</a>]; <span class="comment">//funcionario_nome</span></div>
+<div class="line"><a name="l00141"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ab698b9adf0254c61fde6b5d0ab4d9e86">  141</a></span>&#160;    <span class="keywordtype">char</span> num_tlf[<a class="code" href="funclib_8h.html#a51e09ea4e305f6d2dc0699d1b1061f54">MAX_CHAR_NUM_TLF</a>]; <span class="comment">//funcionario_telefone</span></div>
+<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a6f8659280b616048f8bc35cef01dad59">  142</a></span>&#160;    <a class="code" href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558">ESTADO_CIVIL</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a6f8659280b616048f8bc35cef01dad59">est_civil</a>; <span class="comment">//funcionario_estadocivil</span></div>
+<div class="line"><a name="l00143"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ad5478030f01e095b2521888aad9d6f8b">  143</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ad5478030f01e095b2521888aad9d6f8b">num_dependentes</a>; <span class="comment">//funcionario_ numero de filhos</span></div>
+<div class="line"><a name="l00144"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ae27a41cbe58a0fbb269d76e096328c91">  144</a></span>&#160;    <a class="code" href="funclib_8h.html#acf4048424379c278f3580634aac37a06">CARGO</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ae27a41cbe58a0fbb269d76e096328c91">cargo</a>; <span class="comment">//funcionario_cargo</span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#affad43ba65d0d6ba0df2b7928549e2ee">  145</a></span>&#160;    <a class="code" href="funclib_8h.html#ab80ac07297723eb24420413614c7b327">ESTADO_IRS</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#affad43ba65d0d6ba0df2b7928549e2ee">est_irs</a>; <span class="comment">//ESTADO IRS</span></div>
+<div class="line"><a name="l00146"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#aacda963d291f5d2e76b1b6bfb164d7ef">  146</a></span>&#160;    <a class="code" href="struct_d_a_t_a.html">DATA</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#aacda963d291f5d2e76b1b6bfb164d7ef">data_de_nascimento</a>; <span class="comment">//funcionario_idade</span></div>
+<div class="line"><a name="l00147"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#af118b8100480b9c951ff66a6c1e033b3">  147</a></span>&#160;    <a class="code" href="struct_d_a_t_a.html">DATA</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#af118b8100480b9c951ff66a6c1e033b3">data_de_entrada</a>; <span class="comment">//funcionario_Data de entrada na empresa</span></div>
+<div class="line"><a name="l00148"></a><span class="lineno"><a class="line" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a757422fc66d7617c56a74c3b98390ec2">  148</a></span>&#160;    <a class="code" href="struct_d_a_t_a.html">DATA</a> <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a757422fc66d7617c56a74c3b98390ec2">data_de_saida</a>; <span class="comment">//funcionario_Assiduidade</span></div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;} <a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a>;</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="structkey__value.html">  151</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="structkey__value.html">key_value</a> {</div>
+<div class="line"><a name="l00152"></a><span class="lineno"><a class="line" href="structkey__value.html#a5a7d95f19eaf7fe5724866808015ac9e">  152</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#a5a7d95f19eaf7fe5724866808015ac9e">col1</a>[50];</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="structkey__value.html#a04712a20c413908f4637d802808c37a5">  153</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#a04712a20c413908f4637d802808c37a5">col2</a>[50];</div>
+<div class="line"><a name="l00154"></a><span class="lineno"><a class="line" href="structkey__value.html#afeec7fa3995e153843ade779a9146aff">  154</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#afeec7fa3995e153843ade779a9146aff">col3</a>[50];</div>
+<div class="line"><a name="l00155"></a><span class="lineno"><a class="line" href="structkey__value.html#af3719438cf7c745964ca90a555be51de">  155</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#af3719438cf7c745964ca90a555be51de">col4</a>[50];</div>
+<div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="structkey__value.html#a4ba8d919a85c7e76594191d44067e60e">  156</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#a4ba8d919a85c7e76594191d44067e60e">col5</a>[50];</div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="structkey__value.html#aee0d151eac7593b6e8d2efe6988547f9">  157</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#aee0d151eac7593b6e8d2efe6988547f9">col6</a>[50];</div>
+<div class="line"><a name="l00158"></a><span class="lineno"><a class="line" href="structkey__value.html#a967473d966f3d39d9d7fa5631bec0b50">  158</a></span>&#160;    <span class="keywordtype">char</span> <a class="code" href="structkey__value.html#a967473d966f3d39d9d7fa5631bec0b50">col7</a>[50];</div>
+<div class="line"><a name="l00159"></a><span class="lineno"><a class="line" href="funclib_8h.html#a52acb49112058ac189339f4276ebb095">  159</a></span>&#160;} <a class="code" href="funclib_8h.html#a52acb49112058ac189339f4276ebb095">IRS</a>;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
+<div class="line"><a name="l00161"></a><span class="lineno"><a class="line" href="struct_s_s.html">  161</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="struct_s_s.html#a5a7d95f19eaf7fe5724866808015ac9e">  162</a></span>&#160;    <span class="keywordtype">char</span> col1[50];</div>
+<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="struct_s_s.html#a04712a20c413908f4637d802808c37a5">  163</a></span>&#160;    <span class="keywordtype">char</span> col2[50];</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;} <a class="code" href="struct_s_s.html">SS</a>;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="structproc__salario.html">  166</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct</span>{</div>
+<div class="line"><a name="l00167"></a><span class="lineno"><a class="line" href="structproc__salario.html#a87fb6709a67b4953349649f993df29dd">  167</a></span>&#160;    <span class="keywordtype">char</span> cod_func[50];</div>
+<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="structproc__salario.html#ac57ac706d62e04925cd5bc05264c35f8">  168</a></span>&#160;    <span class="keywordtype">char</span> num_dias_completos[50];</div>
+<div class="line"><a name="l00169"></a><span class="lineno"><a class="line" href="structproc__salario.html#a437a9ea706cbcf1db3824544a9c4ebbe">  169</a></span>&#160;    <span class="keywordtype">char</span> num_meio_dias[50];</div>
+<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="structproc__salario.html#a13d8c63f920d26fa2141d58f8d5e6555">  170</a></span>&#160;    <span class="keywordtype">char</span> num_dias_fim_de_semana[50];</div>
+<div class="line"><a name="l00171"></a><span class="lineno"><a class="line" href="structproc__salario.html#a0f69b50c91e7031cc666044a52ce411a">  171</a></span>&#160;    <span class="keywordtype">char</span> num_de_faltas[50];</div>
+<div class="line"><a name="l00172"></a><span class="lineno"><a class="line" href="structproc__salario.html#a2c6a3fb7cddd9bd7254692264962b5b3">  172</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="structproc__salario.html#a2c6a3fb7cddd9bd7254692264962b5b3">contador</a>,tamanho;</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;}<a class="code" href="structproc__salario.html">proc_salario</a>;</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160; </div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160; </div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="struct_t_i_p_o___s_s.html">  178</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00179"></a><span class="lineno"><a class="line" href="struct_t_i_p_o___s_s.html#a7d6d7aa46dcde4b1ff611e9fe50afd4f">  179</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_t_i_p_o___s_s.html#a7d6d7aa46dcde4b1ff611e9fe50afd4f">valor_ss_funcionario</a>;</div>
+<div class="line"><a name="l00180"></a><span class="lineno"><a class="line" href="struct_t_i_p_o___s_s.html#a0ade01aea015b3d5ab1d4f98d062de79">  180</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_t_i_p_o___s_s.html#a0ade01aea015b3d5ab1d4f98d062de79">valor_ss_empresa</a>;</div>
+<div class="line"><a name="l00181"></a><span class="lineno"><a class="line" href="struct_t_i_p_o___s_s.html#a5c3e7fc16c90f597c691d9d7ac05e44d">  181</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_t_i_p_o___s_s.html#a5c3e7fc16c90f597c691d9d7ac05e44d">valor_ss_total</a>;</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;} <a class="code" href="struct_t_i_p_o___s_s.html">TIPO_SS</a>;</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
+<div class="line"><a name="l00184"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html">  184</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span>{</div>
+<div class="line"><a name="l00185"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#ab36bb472e5d450bde1f8854c28d5bcc8">  185</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_s_a_l_a_r_i_o.html#ab36bb472e5d450bde1f8854c28d5bcc8">codigo_funcionario</a>,contador,tamanho;</div>
+<div class="line"><a name="l00186"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#a48d93a2b226cdd73ae88280f1361b2a9">  186</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_s_a_l_a_r_i_o.html#a48d93a2b226cdd73ae88280f1361b2a9">base</a>, sub_alimentacao, valor_irs;</div>
+<div class="line"><a name="l00187"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#a337b853eb5cc906cdd215781029b478c">  187</a></span>&#160;    <span class="keywordtype">int</span> <a class="code" href="struct_s_a_l_a_r_i_o.html#a337b853eb5cc906cdd215781029b478c">num_dias</a>;</div>
+<div class="line"><a name="l00188"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#a94660cae88cdd135b3f63342ab9dcfcb">  188</a></span>&#160;    <a class="code" href="struct_t_i_p_o___s_s.html">TIPO_SS</a> <a class="code" href="struct_s_a_l_a_r_i_o.html#a94660cae88cdd135b3f63342ab9dcfcb">ss</a>;</div>
+<div class="line"><a name="l00189"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#a1d324866fc3c30f57dd3f6c6b46a57b8">  189</a></span>&#160;    <span class="keywordtype">float</span> <a class="code" href="struct_s_a_l_a_r_i_o.html#a1d324866fc3c30f57dd3f6c6b46a57b8">valor_liquido</a>;</div>
+<div class="line"><a name="l00190"></a><span class="lineno"><a class="line" href="struct_s_a_l_a_r_i_o.html#a9842752e03b4de9b4593f1a3b34364ab">  190</a></span>&#160;    <a class="code" href="struct_d_a_t_a.html">DATA</a> <a class="code" href="struct_s_a_l_a_r_i_o.html#a9842752e03b4de9b4593f1a3b34364ab">data</a>;</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;} <a class="code" href="struct_s_a_l_a_r_i_o.html">SALARIO</a>;</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160; </div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;<span class="comment">//_______________________________________________________________________</span></div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="comment">//PROTOTIPOS</span></div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funclib_8h.html#af7dab97084307eed5e97a7ce35efcfb2">Procurar_CodFuncionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios, <span class="keywordtype">int</span> numero, <span class="keywordtype">int</span> tamanho);</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a2959c2ab86abbbe0609e0d16a535b1d2">Inserir_Funcionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios);</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a2e66e5796133519fd16de7fd99ce12a4">imprimirFuncionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios, <span class="keywordtype">int</span> i);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a905071294d9f59ddef6ba8b8228dbdd6">listarFuncionarios</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios);</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#abdded3306536ca0f96f60869cdbbf813">consultaFuncionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a05a5e47b5475e6e68206561e5b6cd8af">AtualizarFuncionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios);</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a15365eda2a8b03b58fdc4ebb0fcbc02f">EliminarFuncionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios);</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#aa43ed9a3975884326f6cc93ce7f489e7">EscreverFicheiro_Binario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios, FILE *fp);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160; </div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160; </div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;<span class="keywordtype">void</span> <a class="code" href="funclib_8h.html#a29bb0fa7a16c74e5ca606d8a4fcf3e6c">menu_funcionarios</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios, FILE *fp);</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funclib_8h.html#a93e7b291bf5b63add68502cc4a4dc609">carregar_funcionario</a>(<a class="code" href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a> **funcionarios, FILE *fp);</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;<span class="keywordtype">int</span> <a class="code" href="funclib_8h.html#a82e576484fd0fc5911bcf0c7c5bd7788">devolve_tempo</a>(<span class="keywordtype">char</span> opcao);</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;<span class="comment">//________________________________________________________________________</span></div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160; </div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* FUNCLIB_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="ttc" id="afunclib_8h_html_a05a5e47b5475e6e68206561e5b6cd8af"><div class="ttname"><a href="funclib_8h.html#a05a5e47b5475e6e68206561e5b6cd8af">AtualizarFuncionario</a></div><div class="ttdeci">void AtualizarFuncionario(FUNCIONARIO **funcionarios)</div><div class="ttdef"><b>Definition:</b> funcionario.c:380</div></div>
+<div class="ttc" id="afunclib_8h_html_a15365eda2a8b03b58fdc4ebb0fcbc02f"><div class="ttname"><a href="funclib_8h.html#a15365eda2a8b03b58fdc4ebb0fcbc02f">EliminarFuncionario</a></div><div class="ttdeci">void EliminarFuncionario(FUNCIONARIO **funcionarios)</div><div class="ttdef"><b>Definition:</b> funcionario.c:531</div></div>
+<div class="ttc" id="afunclib_8h_html_a2959c2ab86abbbe0609e0d16a535b1d2"><div class="ttname"><a href="funclib_8h.html#a2959c2ab86abbbe0609e0d16a535b1d2">Inserir_Funcionario</a></div><div class="ttdeci">void Inserir_Funcionario(FUNCIONARIO **funcionarios)</div><div class="ttdef"><b>Definition:</b> funcionario.c:205</div></div>
+<div class="ttc" id="afunclib_8h_html_a29bb0fa7a16c74e5ca606d8a4fcf3e6c"><div class="ttname"><a href="funclib_8h.html#a29bb0fa7a16c74e5ca606d8a4fcf3e6c">menu_funcionarios</a></div><div class="ttdeci">void menu_funcionarios(FUNCIONARIO **funcionarios, FILE *fp)</div><div class="ttdef"><b>Definition:</b> funcionario.c:588</div></div>
+<div class="ttc" id="afunclib_8h_html_a2e66e5796133519fd16de7fd99ce12a4"><div class="ttname"><a href="funclib_8h.html#a2e66e5796133519fd16de7fd99ce12a4">imprimirFuncionario</a></div><div class="ttdeci">void imprimirFuncionario(FUNCIONARIO **funcionarios, int i)</div><div class="ttdef"><b>Definition:</b> funcionario.c:292</div></div>
+<div class="ttc" id="afunclib_8h_html_a51e09ea4e305f6d2dc0699d1b1061f54"><div class="ttname"><a href="funclib_8h.html#a51e09ea4e305f6d2dc0699d1b1061f54">MAX_CHAR_NUM_TLF</a></div><div class="ttdeci">#define MAX_CHAR_NUM_TLF</div><div class="ttdef"><b>Definition:</b> funclib.h:55</div></div>
+<div class="ttc" id="afunclib_8h_html_a52acb49112058ac189339f4276ebb095"><div class="ttname"><a href="funclib_8h.html#a52acb49112058ac189339f4276ebb095">IRS</a></div><div class="ttdeci">struct key_value IRS</div></div>
+<div class="ttc" id="afunclib_8h_html_a82e576484fd0fc5911bcf0c7c5bd7788"><div class="ttname"><a href="funclib_8h.html#a82e576484fd0fc5911bcf0c7c5bd7788">devolve_tempo</a></div><div class="ttdeci">int devolve_tempo(char opcao)</div><div class="ttdef"><b>Definition:</b> funcionario.c:144</div></div>
+<div class="ttc" id="afunclib_8h_html_a905071294d9f59ddef6ba8b8228dbdd6"><div class="ttname"><a href="funclib_8h.html#a905071294d9f59ddef6ba8b8228dbdd6">listarFuncionarios</a></div><div class="ttdeci">void listarFuncionarios(FUNCIONARIO **funcionarios)</div><div class="ttdef"><b>Definition:</b> funcionario.c:329</div></div>
+<div class="ttc" id="afunclib_8h_html_a93e7b291bf5b63add68502cc4a4dc609"><div class="ttname"><a href="funclib_8h.html#a93e7b291bf5b63add68502cc4a4dc609">carregar_funcionario</a></div><div class="ttdeci">int carregar_funcionario(FUNCIONARIO **funcionarios, FILE *fp)</div><div class="ttdef"><b>Definition:</b> funcionario.c:651</div></div>
+<div class="ttc" id="afunclib_8h_html_aa43ed9a3975884326f6cc93ce7f489e7"><div class="ttname"><a href="funclib_8h.html#aa43ed9a3975884326f6cc93ce7f489e7">EscreverFicheiro_Binario</a></div><div class="ttdeci">void EscreverFicheiro_Binario(FUNCIONARIO **funcionarios, FILE *fp)</div><div class="ttdef"><b>Definition:</b> funcionario.c:563</div></div>
+<div class="ttc" id="afunclib_8h_html_ab80ac07297723eb24420413614c7b327"><div class="ttname"><a href="funclib_8h.html#ab80ac07297723eb24420413614c7b327">ESTADO_IRS</a></div><div class="ttdeci">ESTADO_IRS</div><div class="ttdef"><b>Definition:</b> funclib.h:23</div></div>
+<div class="ttc" id="afunclib_8h_html_ab80ac07297723eb24420413614c7b327a02b0de8561e99d55e91806ea6638014c"><div class="ttname"><a href="funclib_8h.html#ab80ac07297723eb24420413614c7b327a02b0de8561e99d55e91806ea6638014c">CASADO_1TITULAR</a></div><div class="ttdeci">@ CASADO_1TITULAR</div><div class="ttdef"><b>Definition:</b> funclib.h:24</div></div>
+<div class="ttc" id="afunclib_8h_html_ab80ac07297723eb24420413614c7b327a63edb5e308e500a097634a475c75446f"><div class="ttname"><a href="funclib_8h.html#ab80ac07297723eb24420413614c7b327a63edb5e308e500a097634a475c75446f">N_CASADO</a></div><div class="ttdeci">@ N_CASADO</div><div class="ttdef"><b>Definition:</b> funclib.h:24</div></div>
+<div class="ttc" id="afunclib_8h_html_ab80ac07297723eb24420413614c7b327af893772d619c02aa2a3ef3c46c27eb3d"><div class="ttname"><a href="funclib_8h.html#ab80ac07297723eb24420413614c7b327af893772d619c02aa2a3ef3c46c27eb3d">CASADO_2TITULAR</a></div><div class="ttdeci">@ CASADO_2TITULAR</div><div class="ttdef"><b>Definition:</b> funclib.h:24</div></div>
+<div class="ttc" id="afunclib_8h_html_abdded3306536ca0f96f60869cdbbf813"><div class="ttname"><a href="funclib_8h.html#abdded3306536ca0f96f60869cdbbf813">consultaFuncionario</a></div><div class="ttdeci">void consultaFuncionario(FUNCIONARIO **funcionarios)</div><div class="ttdef"><b>Definition:</b> funcionario.c:352</div></div>
+<div class="ttc" id="afunclib_8h_html_acf4048424379c278f3580634aac37a06"><div class="ttname"><a href="funclib_8h.html#acf4048424379c278f3580634aac37a06">CARGO</a></div><div class="ttdeci">CARGO</div><div class="ttdef"><b>Definition:</b> funclib.h:19</div></div>
+<div class="ttc" id="afunclib_8h_html_acf4048424379c278f3580634aac37a06abddad61176375df57c8242ff8b3d5a3e"><div class="ttname"><a href="funclib_8h.html#acf4048424379c278f3580634aac37a06abddad61176375df57c8242ff8b3d5a3e">EMPREGADO</a></div><div class="ttdeci">@ EMPREGADO</div><div class="ttdef"><b>Definition:</b> funclib.h:20</div></div>
+<div class="ttc" id="afunclib_8h_html_acf4048424379c278f3580634aac37a06ac62cf7b32b3f068e2dcf6856645ccfe4"><div class="ttname"><a href="funclib_8h.html#acf4048424379c278f3580634aac37a06ac62cf7b32b3f068e2dcf6856645ccfe4">ADMINISTRADOR</a></div><div class="ttdeci">@ ADMINISTRADOR</div><div class="ttdef"><b>Definition:</b> funclib.h:20</div></div>
+<div class="ttc" id="afunclib_8h_html_acf4048424379c278f3580634aac37a06ad0f74d3939f32cdf6f468e32a99db059"><div class="ttname"><a href="funclib_8h.html#acf4048424379c278f3580634aac37a06ad0f74d3939f32cdf6f468e32a99db059">CHEFE</a></div><div class="ttdeci">@ CHEFE</div><div class="ttdef"><b>Definition:</b> funclib.h:20</div></div>
+<div class="ttc" id="afunclib_8h_html_ae1ebc5d0741e6f70e37256560d899558"><div class="ttname"><a href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558">ESTADO_CIVIL</a></div><div class="ttdeci">ESTADO_CIVIL</div><div class="ttdef"><b>Definition:</b> funclib.h:15</div></div>
+<div class="ttc" id="afunclib_8h_html_ae1ebc5d0741e6f70e37256560d899558a0e43967b59e254ddbd6c871fdfc45d37"><div class="ttname"><a href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a0e43967b59e254ddbd6c871fdfc45d37">CASADO</a></div><div class="ttdeci">@ CASADO</div><div class="ttdef"><b>Definition:</b> funclib.h:16</div></div>
+<div class="ttc" id="afunclib_8h_html_ae1ebc5d0741e6f70e37256560d899558a11f74199ef8125a9bd76fa3c654d0e43"><div class="ttname"><a href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a11f74199ef8125a9bd76fa3c654d0e43">SOLTEIRO</a></div><div class="ttdeci">@ SOLTEIRO</div><div class="ttdef"><b>Definition:</b> funclib.h:16</div></div>
+<div class="ttc" id="afunclib_8h_html_ae1ebc5d0741e6f70e37256560d899558a541540d87a1edf77d89edabd4badd668"><div class="ttname"><a href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558a541540d87a1edf77d89edabd4badd668">VIUVO</a></div><div class="ttdeci">@ VIUVO</div><div class="ttdef"><b>Definition:</b> funclib.h:16</div></div>
+<div class="ttc" id="afunclib_8h_html_ae1ebc5d0741e6f70e37256560d899558aa5faf6c887ec07d92be37975829b9a16"><div class="ttname"><a href="funclib_8h.html#ae1ebc5d0741e6f70e37256560d899558aa5faf6c887ec07d92be37975829b9a16">DIVORCIADO</a></div><div class="ttdeci">@ DIVORCIADO</div><div class="ttdef"><b>Definition:</b> funclib.h:16</div></div>
+<div class="ttc" id="afunclib_8h_html_ae7f9f902f204fc88f391a3a9668be87d"><div class="ttname"><a href="funclib_8h.html#ae7f9f902f204fc88f391a3a9668be87d">MAX_CHAR_NOME</a></div><div class="ttdeci">#define MAX_CHAR_NOME</div><div class="ttdef"><b>Definition:</b> funclib.h:59</div></div>
+<div class="ttc" id="afunclib_8h_html_af7dab97084307eed5e97a7ce35efcfb2"><div class="ttname"><a href="funclib_8h.html#af7dab97084307eed5e97a7ce35efcfb2">Procurar_CodFuncionario</a></div><div class="ttdeci">int Procurar_CodFuncionario(FUNCIONARIO **funcionarios, int numero, int tamanho)</div><div class="ttdef"><b>Definition:</b> funcionario.c:181</div></div>
+<div class="ttc" id="astruct_d_a_t_a_html"><div class="ttname"><a href="struct_d_a_t_a.html">DATA</a></div><div class="ttdef"><b>Definition:</b> funclib.h:133</div></div>
+<div class="ttc" id="astruct_d_a_t_a_html_ac404d93cbf0169fd9e89edc17d0c5572"><div class="ttname"><a href="struct_d_a_t_a.html#ac404d93cbf0169fd9e89edc17d0c5572">DATA::ano</a></div><div class="ttdeci">int ano</div><div class="ttdef"><b>Definition:</b> funclib.h:134</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html">FUNCIONARIO</a></div><div class="ttdef"><b>Definition:</b> funclib.h:137</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_a1dca404df9f3a324448195a8d8a74a6c"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a1dca404df9f3a324448195a8d8a74a6c">FUNCIONARIO::codigo</a></div><div class="ttdeci">int codigo</div><div class="ttdef"><b>Definition:</b> funclib.h:139</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_a2c6a3fb7cddd9bd7254692264962b5b3"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a2c6a3fb7cddd9bd7254692264962b5b3">FUNCIONARIO::contador</a></div><div class="ttdeci">int contador</div><div class="ttdef"><b>Definition:</b> funclib.h:138</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_a6f8659280b616048f8bc35cef01dad59"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a6f8659280b616048f8bc35cef01dad59">FUNCIONARIO::est_civil</a></div><div class="ttdeci">ESTADO_CIVIL est_civil</div><div class="ttdef"><b>Definition:</b> funclib.h:142</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_a757422fc66d7617c56a74c3b98390ec2"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#a757422fc66d7617c56a74c3b98390ec2">FUNCIONARIO::data_de_saida</a></div><div class="ttdeci">DATA data_de_saida</div><div class="ttdef"><b>Definition:</b> funclib.h:148</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_aacda963d291f5d2e76b1b6bfb164d7ef"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#aacda963d291f5d2e76b1b6bfb164d7ef">FUNCIONARIO::data_de_nascimento</a></div><div class="ttdeci">DATA data_de_nascimento</div><div class="ttdef"><b>Definition:</b> funclib.h:146</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_ad5478030f01e095b2521888aad9d6f8b"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ad5478030f01e095b2521888aad9d6f8b">FUNCIONARIO::num_dependentes</a></div><div class="ttdeci">int num_dependentes</div><div class="ttdef"><b>Definition:</b> funclib.h:143</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_ae27a41cbe58a0fbb269d76e096328c91"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#ae27a41cbe58a0fbb269d76e096328c91">FUNCIONARIO::cargo</a></div><div class="ttdeci">CARGO cargo</div><div class="ttdef"><b>Definition:</b> funclib.h:144</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_af118b8100480b9c951ff66a6c1e033b3"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#af118b8100480b9c951ff66a6c1e033b3">FUNCIONARIO::data_de_entrada</a></div><div class="ttdeci">DATA data_de_entrada</div><div class="ttdef"><b>Definition:</b> funclib.h:147</div></div>
+<div class="ttc" id="astruct_f_u_n_c_i_o_n_a_r_i_o_html_affad43ba65d0d6ba0df2b7928549e2ee"><div class="ttname"><a href="struct_f_u_n_c_i_o_n_a_r_i_o.html#affad43ba65d0d6ba0df2b7928549e2ee">FUNCIONARIO::est_irs</a></div><div class="ttdeci">ESTADO_IRS est_irs</div><div class="ttdef"><b>Definition:</b> funclib.h:145</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html">SALARIO</a></div><div class="ttdef"><b>Definition:</b> funclib.h:184</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_a1d324866fc3c30f57dd3f6c6b46a57b8"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#a1d324866fc3c30f57dd3f6c6b46a57b8">SALARIO::valor_liquido</a></div><div class="ttdeci">float valor_liquido</div><div class="ttdef"><b>Definition:</b> funclib.h:189</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_a337b853eb5cc906cdd215781029b478c"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#a337b853eb5cc906cdd215781029b478c">SALARIO::num_dias</a></div><div class="ttdeci">int num_dias</div><div class="ttdef"><b>Definition:</b> funclib.h:187</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_a48d93a2b226cdd73ae88280f1361b2a9"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#a48d93a2b226cdd73ae88280f1361b2a9">SALARIO::base</a></div><div class="ttdeci">float base</div><div class="ttdef"><b>Definition:</b> funclib.h:186</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_a94660cae88cdd135b3f63342ab9dcfcb"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#a94660cae88cdd135b3f63342ab9dcfcb">SALARIO::ss</a></div><div class="ttdeci">TIPO_SS ss</div><div class="ttdef"><b>Definition:</b> funclib.h:188</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_a9842752e03b4de9b4593f1a3b34364ab"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#a9842752e03b4de9b4593f1a3b34364ab">SALARIO::data</a></div><div class="ttdeci">DATA data</div><div class="ttdef"><b>Definition:</b> funclib.h:190</div></div>
+<div class="ttc" id="astruct_s_a_l_a_r_i_o_html_ab36bb472e5d450bde1f8854c28d5bcc8"><div class="ttname"><a href="struct_s_a_l_a_r_i_o.html#ab36bb472e5d450bde1f8854c28d5bcc8">SALARIO::codigo_funcionario</a></div><div class="ttdeci">int codigo_funcionario</div><div class="ttdef"><b>Definition:</b> funclib.h:185</div></div>
+<div class="ttc" id="astruct_s_s_html"><div class="ttname"><a href="struct_s_s.html">SS</a></div><div class="ttdef"><b>Definition:</b> funclib.h:161</div></div>
+<div class="ttc" id="astruct_t_i_p_o___s_s_html"><div class="ttname"><a href="struct_t_i_p_o___s_s.html">TIPO_SS</a></div><div class="ttdef"><b>Definition:</b> funclib.h:178</div></div>
+<div class="ttc" id="astruct_t_i_p_o___s_s_html_a0ade01aea015b3d5ab1d4f98d062de79"><div class="ttname"><a href="struct_t_i_p_o___s_s.html#a0ade01aea015b3d5ab1d4f98d062de79">TIPO_SS::valor_ss_empresa</a></div><div class="ttdeci">float valor_ss_empresa</div><div class="ttdef"><b>Definition:</b> funclib.h:180</div></div>
+<div class="ttc" id="astruct_t_i_p_o___s_s_html_a5c3e7fc16c90f597c691d9d7ac05e44d"><div class="ttname"><a href="struct_t_i_p_o___s_s.html#a5c3e7fc16c90f597c691d9d7ac05e44d">TIPO_SS::valor_ss_total</a></div><div class="ttdeci">float valor_ss_total</div><div class="ttdef"><b>Definition:</b> funclib.h:181</div></div>
+<div class="ttc" id="astruct_t_i_p_o___s_s_html_a7d6d7aa46dcde4b1ff611e9fe50afd4f"><div class="ttname"><a href="struct_t_i_p_o___s_s.html#a7d6d7aa46dcde4b1ff611e9fe50afd4f">TIPO_SS::valor_ss_funcionario</a></div><div class="ttdeci">float valor_ss_funcionario</div><div class="ttdef"><b>Definition:</b> funclib.h:179</div></div>
+<div class="ttc" id="astructkey__value_html"><div class="ttname"><a href="structkey__value.html">key_value</a></div><div class="ttdef"><b>Definition:</b> funclib.h:151</div></div>
+<div class="ttc" id="astructkey__value_html_a04712a20c413908f4637d802808c37a5"><div class="ttname"><a href="structkey__value.html#a04712a20c413908f4637d802808c37a5">key_value::col2</a></div><div class="ttdeci">char col2[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:153</div></div>
+<div class="ttc" id="astructkey__value_html_a4ba8d919a85c7e76594191d44067e60e"><div class="ttname"><a href="structkey__value.html#a4ba8d919a85c7e76594191d44067e60e">key_value::col5</a></div><div class="ttdeci">char col5[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:156</div></div>
+<div class="ttc" id="astructkey__value_html_a5a7d95f19eaf7fe5724866808015ac9e"><div class="ttname"><a href="structkey__value.html#a5a7d95f19eaf7fe5724866808015ac9e">key_value::col1</a></div><div class="ttdeci">char col1[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:152</div></div>
+<div class="ttc" id="astructkey__value_html_a967473d966f3d39d9d7fa5631bec0b50"><div class="ttname"><a href="structkey__value.html#a967473d966f3d39d9d7fa5631bec0b50">key_value::col7</a></div><div class="ttdeci">char col7[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:158</div></div>
+<div class="ttc" id="astructkey__value_html_aee0d151eac7593b6e8d2efe6988547f9"><div class="ttname"><a href="structkey__value.html#aee0d151eac7593b6e8d2efe6988547f9">key_value::col6</a></div><div class="ttdeci">char col6[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:157</div></div>
+<div class="ttc" id="astructkey__value_html_af3719438cf7c745964ca90a555be51de"><div class="ttname"><a href="structkey__value.html#af3719438cf7c745964ca90a555be51de">key_value::col4</a></div><div class="ttdeci">char col4[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:155</div></div>
+<div class="ttc" id="astructkey__value_html_afeec7fa3995e153843ade779a9146aff"><div class="ttname"><a href="structkey__value.html#afeec7fa3995e153843ade779a9146aff">key_value::col3</a></div><div class="ttdeci">char col3[50]</div><div class="ttdef"><b>Definition:</b> funclib.h:154</div></div>
+<div class="ttc" id="astructproc__salario_html"><div class="ttname"><a href="structproc__salario.html">proc_salario</a></div><div class="ttdef"><b>Definition:</b> funclib.h:166</div></div>
+<div class="ttc" id="astructproc__salario_html_a2c6a3fb7cddd9bd7254692264962b5b3"><div class="ttname"><a href="structproc__salario.html#a2c6a3fb7cddd9bd7254692264962b5b3">proc_salario::contador</a></div><div class="ttdeci">int contador</div><div class="ttdef"><b>Definition:</b> funclib.h:172</div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+Gerado por&#160;<a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1
+</small></address>
+</body>
+</html>

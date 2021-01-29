@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <string.h>
-
+#include <time.h>
 #define VALOR_INVALIDO "O valor inserido é inválido."
 
 void cleanInputBuffer() {

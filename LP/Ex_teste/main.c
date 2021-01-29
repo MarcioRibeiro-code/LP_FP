@@ -17,7 +17,7 @@
 
 #include "input.h"
 #include "funclib.h"
-
+#include "salariolib.h"
 //struct
 
 

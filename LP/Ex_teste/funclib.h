@@ -168,7 +168,7 @@ typedef struct {
 } TIPO_SS;
 
 typedef struct {
-    int codigo_funcionario, num_meses, contador,tamanho;
+    int codigo_funcionario,contador,tamanho;
     float base, sub_alimentacao, valor_irs;
     int num_dias;
     TIPO_SS ss;
@@ -179,12 +179,26 @@ typedef struct {
 //_______________________________________________________________________
 
 //PROTOTIPOS
-void logMsg(char *msg, char *filename);
+
+int Procurar_CodFuncionario(FUNCIONARIO **funcionarios, int numero, int tamanho);
 void Inserir_Funcionario(FUNCIONARIO **funcionarios);
-void procurarFuncionarios(FUNCIONARIO funcionarios);
-void atualizarFuncionarios(FUNCIONARIO *funcionarios);
-void removerFuncionarios(FUNCIONARIO *funcionarios);
+void imprimirFuncionario(FUNCIONARIO **funcionarios, int i);
 void listarFuncionarios(FUNCIONARIO **funcionarios);
+void consultaFuncionario(FUNCIONARIO **funcionarios);
+void AtualizarFuncionario(FUNCIONARIO **funcionarios);
+void EliminarFuncionario(FUNCIONARIO **funcionarios);
+void EscreverFicheiro_Binario(FUNCIONARIO **funcionarios, FILE *fp);
+void printValues_IRS(dict *values);
+void readcsv(dict *values, int est_irs);
+void readcsv_seg_social(SS values[]);
+void printValues(SS *values);
+void imprimirSalario(SALARIO **salario, int i);
+
+void menu_funcionarios(FUNCIONARIO **funcionarios, FILE *fp);
+int carregar_funcionario(FUNCIONARIO **funcionarios, FILE *fp);
+int devolve_tempo(char opcao);
 //________________________________________________________________________
+
+
 #endif /* FUNCLIB_H */
 

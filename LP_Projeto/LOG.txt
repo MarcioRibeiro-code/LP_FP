@@ -1,0 +1,386 @@
+2021-01-13 19:23:33 - Calcular Salario
+2021-01-13 19:23:41 - Calcular Salario
+2021-01-13 19:23:45 - Soma do salario de um funcionario
+2021-01-13 19:27:17 - Menu Salarios
+2021-01-13 19:29:44 - Calcular Salario
+2021-01-13 19:30:02 - Calcular Salario
+2021-01-13 19:30:12 - Calcular Salario
+2021-01-13 19:30:14 - Listar Salario
+2021-01-13 19:30:27 - Soma do salario de um funcionario
+2021-01-13 19:34:28 - Menu Salarios
+2021-01-13 19:34:42 - Calcular Salario
+2021-01-13 19:35:09 - Calcular Salario
+2021-01-13 19:35:17 - Calcular todos os Salarios
+2021-01-13 19:35:22 - Soma do salario de um funcionario
+2021-01-13 19:36:06 - Listar Salario
+2021-01-13 19:37:08 - Menu Salarios
+2021-01-13 19:40:33 - Calcular Salario
+2021-01-13 19:40:42 - Calcular Salario
+2021-01-13 19:40:44 - Listar Salario
+2021-01-13 19:40:49 - Media Salario
+2021-01-13 19:40:55 - Soma do salario de um funcionario
+2021-01-13 19:43:00 - Calcular Salario
+2021-01-13 19:43:06 - Calcular Salario
+2021-01-13 19:43:07 - Listar Salario
+2021-01-13 19:43:12 - Soma do salario de um funcionario
+2021-01-13 19:44:57 - Menu Salarios
+2021-01-13 19:45:12 - Calcular Salario
+2021-01-13 19:45:23 - Calcular Salario
+2021-01-13 19:45:24 - Listar Salario
+2021-01-13 19:45:38 - Soma do salario de um funcionario
+2021-01-13 19:46:21 - Calcular Salario
+2021-01-13 19:46:32 - Calcular Salario
+2021-01-13 19:46:35 - Soma do salario de um funcionario
+2021-01-13 19:46:40 - Menu Salarios
+2021-01-13 20:49:25 - Calcular Salario
+2021-01-13 20:49:31 - Calcular Salario
+2021-01-13 20:49:51 - Calcular Salario
+2021-01-13 20:49:55 - Listar Salario
+2021-01-13 20:50:01 - Soma do salario de um funcionario
+2021-01-13 21:03:10 - Calcular Salario
+2021-01-13 21:03:13 - Listar Salario
+2021-01-13 21:03:29 - Calcular Salario
+2021-01-13 21:03:37 - Calcular Salario
+2021-01-13 21:03:41 - Soma do salario de um funcionario
+2021-01-13 21:04:36 - Menu Salarios
+2021-01-13 21:04:47 - Calcular Salario
+2021-01-13 21:04:55 - Calcular Salario
+2021-01-13 21:04:58 - Soma do salario de um funcionario
+2021-01-13 21:05:41 - Calcular Salario
+2021-01-13 21:05:43 - Soma do salario de um funcionario
+2021-01-13 21:06:45 - Menu Salarios
+2021-01-13 21:06:55 - Calcular Salario
+2021-01-13 21:07:02 - Calcular Salario
+2021-01-13 21:07:09 - Calcular Salario
+2021-01-13 21:07:11 - Soma do salario de um funcionario
+2021-01-13 21:09:00 - Menu Salarios
+2021-01-13 21:09:11 - Calcular Salario
+2021-01-13 21:09:20 - Calcular Salario
+2021-01-13 21:09:26 - Calcular Salario
+2021-01-13 21:09:28 - Soma do salario de um funcionario
+2021-01-13 21:10:26 - Menu Salarios
+2021-01-13 21:10:37 - Calcular Salario
+2021-01-13 21:10:44 - Calcular Salario
+2021-01-13 21:10:49 - Soma do salario de um funcionario
+2021-01-13 21:16:08 - Menu Salarios
+2021-01-13 21:16:17 - Menu Funcionarios
+2021-01-13 21:16:27 - Calcular Salario
+2021-01-13 21:16:32 - Calcular Salario
+2021-01-13 21:16:42 - Calcular Salario
+2021-01-13 21:16:46 - Soma do salario de um funcionario
+2021-01-13 21:17:05 - Menu Salarios
+2021-01-13 21:37:42 - Calcular Salario
+2021-01-13 21:37:47 - Calcular Salario
+2021-01-13 21:38:00 - Calcular Salario
+2021-01-13 21:38:26 - Calcular Salario
+2021-01-13 21:38:28 - Calcular Salario
+2021-01-13 21:38:43 - Calcular Salario
+2021-01-13 21:41:25 - Menu Salarios
+2021-01-13 21:41:46 - Calcular Salario
+2021-01-13 21:41:55 - Calcular Salario
+2021-01-13 21:48:16 - Menu Salarios
+2021-01-13 21:48:53 - Calcular Salario
+2021-01-13 21:49:32 - Calcular Salario
+2021-01-13 21:50:09 - Calcular Salario
+2021-01-13 21:50:22 - Calcular Salario
+2021-01-13 21:51:42 - Listar Salario
+2021-01-13 21:51:47 - Menu Salarios
+2021-01-13 21:54:53 - Calcular Salario
+2021-01-13 21:55:15 - Calcular Salario
+2021-01-13 21:55:50 - Menu Salarios
+2021-01-13 21:55:54 - Gravar Salario
+2021-01-13 21:55:56 - Menu Salarios
+2021-01-13 21:56:17 - Calcular Salario
+2021-01-13 21:56:53 - Menu Salarios
+2021-01-13 21:57:05 - Calcular Salario
+2021-01-13 21:59:37 - Menu Salarios
+2021-01-13 21:59:48 - Calcular Salario
+2021-01-13 21:59:54 - Calcular Salario
+2021-01-13 22:00:54 - Menu Funcionarios
+2021-01-13 22:01:45 - Calcular Salario
+2021-01-13 22:01:50 - Listar Salario
+2021-01-13 22:01:59 - Menu Salarios
+2021-01-14 15:16:37 - Listar Funcionarios
+2021-01-14 15:16:44 - Eliminar Funcionario
+2021-01-14 15:16:47 - Listar Funcionarios
+2021-01-14 15:16:52 - Menu Funcionarios
+2021-01-14 15:17:02 - Calcular todos os Salarios
+2021-01-14 15:17:09 - Listar Salario
+2021-01-14 15:17:19 - Menu Salarios
+2021-01-15 16:37:11 - Calcular Salario CSV
+2021-01-15 16:37:18 - Listar Salario
+2021-01-15 16:44:35 - Calcular Salario CSV
+2021-01-15 16:44:39 - Listar Salario
+2021-01-15 16:46:18 - Menu Salarios
+2021-01-15 16:46:26 - Calcular Salario CSV
+2021-01-15 16:46:28 - Listar Salario
+2021-01-15 16:46:58 - Menu Salarios
+2021-01-15 16:50:33 - Calcular Salario CSV
+2021-01-15 16:51:24 - Menu Salarios
+2021-01-15 16:51:41 - Calcular Salario CSV
+2021-01-15 16:53:32 - Menu Salarios
+2021-01-15 16:53:39 - Calcular Salario CSV
+2021-01-15 16:55:51 - Menu Salarios
+2021-01-15 17:01:22 - Calcular Salario CSV
+2021-01-15 17:01:26 - Listar Salario
+2021-01-15 17:02:18 - Menu Salarios
+2021-01-15 17:02:31 - Calcular Salario CSV
+2021-01-15 17:02:37 - Listar Salario
+2021-01-15 17:03:42 - Menu Salarios
+2021-01-15 17:04:21 - Listar Salario
+2021-01-15 17:08:05 - Calcular Salario CSV
+2021-01-15 17:08:07 - Listar Salario
+2021-01-15 17:08:29 - Menu Salarios
+2021-01-15 17:08:37 - Calcular Salario CSV
+2021-01-15 17:08:38 - Listar Salario
+2021-01-15 17:09:55 - Menu Salarios
+2021-01-15 17:10:02 - Calcular Salario CSV
+2021-01-15 17:10:04 - Listar Salario
+2021-01-15 17:10:23 - Menu Salarios
+2021-01-15 17:10:29 - Calcular Salario CSV
+2021-01-15 17:10:30 - Listar Salario
+2021-01-15 17:12:29 - Menu Salarios
+2021-01-15 18:12:39 - Calcular Salario CSV
+2021-01-15 18:12:41 - Listar Salario
+2021-01-15 18:13:36 - Menu Salarios
+2021-01-15 18:14:35 - Calcular Salario CSV
+2021-01-15 18:14:38 - Listar Salario
+2021-01-15 18:16:07 - Menu Salarios
+2021-01-15 18:18:03 - Calcular Salario CSV
+2021-01-15 18:18:05 - Listar Salario
+2021-01-15 18:18:52 - Menu Salarios
+2021-01-15 17:20:15 - Calcular Salario CSV
+2021-01-15 17:20:16 - Listar Salario
+2021-01-15 17:21:10 - Menu Salarios
+2021-01-15 17:24:22 - Calcular Salario CSV
+2021-01-15 17:24:24 - Listar Salario
+2021-01-15 17:25:36 - Calcular Salario CSV
+2021-01-15 17:25:37 - Listar Salario
+2021-01-15 17:25:50 - Menu Salarios
+2021-01-15 17:25:58 - Calcular Salario CSV
+2021-01-15 17:26:01 - Listar Salario
+2021-01-15 17:27:59 - Menu Salarios
+2021-01-15 17:28:33 - Calcular Salario CSV
+2021-01-15 17:28:35 - Listar Salario
+2021-01-15 17:29:27 - Menu Salarios
+2021-01-15 17:29:57 - Calcular Salario CSV
+2021-01-15 17:30:02 - Listar Salario
+2021-01-15 17:30:48 - Menu Salarios
+2021-01-15 17:30:55 - Calcular Salario CSV
+2021-01-15 17:30:56 - Listar Salario
+2021-01-15 17:31:47 - Menu Salarios
+2021-01-15 17:32:19 - Calcular Salario CSV
+2021-01-15 17:32:20 - Listar Salario
+2021-01-15 17:33:45 - Menu Salarios
+2021-01-15 17:33:49 - Listar Funcionarios
+2021-01-15 17:34:08 - Menu Funcionarios
+2021-01-15 17:34:18 - Listar Salario
+2021-01-15 17:35:01 - Calcular Salario CSV
+2021-01-15 17:35:02 - Listar Salario
+2021-01-15 17:37:02 - Menu Salarios
+2021-01-15 17:37:09 - Calcular Salario CSV
+2021-01-15 17:37:19 - Listar Salario
+2021-01-15 17:39:14 - Menu Salarios
+2021-01-15 17:39:23 - Calcular Salario CSV
+2021-01-15 17:39:24 - Listar Salario
+2021-01-15 17:39:58 - Menu Salarios
+2021-01-15 17:40:07 - Calcular Salario CSV
+2021-01-15 17:40:11 - Listar Salario
+2021-01-15 17:41:01 - Menu Salarios
+2021-01-15 17:41:08 - Calcular Salario CSV
+2021-01-15 17:41:08 - Listar Salario
+2021-01-15 17:42:09 - Menu Salarios
+2021-01-15 17:42:15 - Calcular Salario CSV
+2021-01-15 17:42:16 - Listar Salario
+2021-01-15 17:42:28 - Menu Salarios
+2021-01-15 17:42:37 - Calcular Salario CSV
+2021-01-15 17:42:38 - Listar Salario
+2021-01-15 17:43:16 - Menu Salarios
+2021-01-15 17:43:23 - Calcular Salario CSV
+2021-01-15 17:43:24 - Listar Salario
+2021-01-15 17:43:45 - Menu Salarios
+2021-01-15 17:43:55 - Calcular Salario CSV
+2021-01-15 17:43:58 - Listar Salario
+2021-01-15 17:44:01 - Menu Salarios
+2021-01-15 17:45:37 - Calcular Salario CSV
+2021-01-15 17:45:40 - Listar Salario
+2021-01-15 17:46:25 - Menu Salarios
+2021-01-15 17:46:32 - Calcular Salario CSV
+2021-01-15 17:46:35 - Menu Salarios
+2021-01-15 17:47:43 - Menu Funcionarios
+2021-01-15 17:47:45 - Calcular Salario CSV
+2021-01-15 17:47:47 - Menu Salarios
+2021-01-15 17:49:55 - Calcular Salario CSV
+2021-01-15 17:50:53 - Menu Salarios
+2021-01-15 17:51:05 - Calcular Salario CSV
+2021-01-15 17:52:11 - Menu Salarios
+2021-01-15 17:52:23 - Calcular Salario CSV
+2021-01-15 17:53:16 - Listar Salario
+2021-01-15 17:53:58 - Calcular Salario CSV
+2021-01-15 17:54:00 - Listar Salario
+2021-01-15 17:54:36 - Menu Salarios
+2021-01-15 17:54:43 - Calcular Salario CSV
+2021-01-15 17:54:44 - Listar Salario
+2021-01-15 17:55:50 - Menu Salarios
+2021-01-15 17:56:01 - Calcular Salario CSV
+2021-01-15 17:57:58 - Menu Salarios
+2021-01-15 17:58:09 - Calcular Salario CSV
+2021-01-15 17:58:35 - Menu Salarios
+2021-01-15 17:59:19 - Calcular Salario CSV
+2021-01-15 17:59:26 - Listar Salario
+2021-01-15 17:59:36 - Menu Salarios
+2021-01-15 17:59:42 - Calcular Salario CSV
+2021-01-15 17:59:43 - Listar Salario
+2021-01-15 18:02:34 - Menu Salarios
+2021-01-15 18:02:41 - Calcular Salario CSV
+2021-01-15 18:02:44 - Listar Salario
+2021-01-15 18:04:31 - Menu Salarios
+2021-01-15 18:04:38 - Calcular Salario CSV
+2021-01-15 18:04:42 - Listar Salario
+2021-01-15 18:05:14 - Menu Salarios
+2021-01-15 18:07:04 - Calcular Salario CSV
+2021-01-15 18:07:05 - Listar Salario
+2021-01-15 18:09:37 - Menu Salarios
+2021-01-15 18:09:46 - Calcular Salario CSV
+2021-01-15 18:09:50 - Listar Salario
+2021-01-15 18:12:07 - Menu Salarios
+2021-01-15 18:16:05 - Calcular Salario CSV
+2021-01-15 18:16:06 - Listar Salario
+2021-01-15 18:16:26 - Menu Salarios
+2021-01-15 18:16:34 - Calcular Salario CSV
+2021-01-15 18:16:34 - Listar Salario
+2021-01-15 18:16:59 - Calcular Salario CSV
+2021-01-15 18:17:05 - Listar Salario
+2021-01-15 18:17:41 - Menu Salarios
+2021-01-15 18:19:14 - Calcular Salario CSV
+2021-01-15 18:19:18 - Listar Salario
+2021-01-15 18:19:20 - Calcular Salario CSV
+2021-01-15 18:19:21 - Listar Salario
+2021-01-15 18:19:29 - Menu Salarios
+2021-01-15 18:22:22 - Calcular Salario CSV
+2021-01-15 18:23:23 - Calcular Salario CSV
+2021-01-15 18:23:24 - Listar Salario
+2021-01-15 18:26:06 - Calcular Salario CSV
+2021-01-15 18:28:15 - Calcular Salario CSV
+2021-01-15 18:28:16 - Listar Salario
+2021-01-15 18:28:36 - Listar Funcionarios
+2021-01-15 18:28:47 - Eliminar Funcionario
+2021-01-15 18:28:52 - Consultar Funcionario
+2021-01-15 18:28:54 - Menu Funcionarios
+2021-01-15 18:28:56 - Calcular Salario CSV
+2021-01-15 18:28:59 - Listar Salario
+2021-01-15 18:29:31 - Menu Salarios
+2021-01-15 18:29:38 - Calcular Salario CSV
+2021-01-15 18:29:40 - Listar Salario
+2021-01-15 18:32:25 - Calcular Salario CSV
+2021-01-15 18:32:26 - Listar Salario
+2021-01-15 18:34:37 - Calcular Salario CSV
+2021-01-15 18:34:38 - Listar Salario
+2021-01-15 18:34:42 - Menu Salarios
+2021-01-15 18:35:22 - Calcular Salario CSV
+2021-01-15 18:35:33 - Listar Salario
+2021-01-15 18:35:40 - Menu Salarios
+2021-01-15 18:37:47 - Calcular Salario CSV
+2021-01-15 18:37:48 - Listar Salario
+2021-01-15 18:41:57 - Menu Salarios
+2021-01-15 18:42:08 - Calcular Salario CSV
+2021-01-15 18:43:05 - Menu Salarios
+2021-01-15 18:43:15 - Calcular Salario CSV
+2021-01-15 18:43:27 - Listar Salario
+2021-01-15 18:56:40 - Calcular Salario CSV
+2021-01-15 18:56:44 - Listar Salario
+2021-01-15 18:58:34 - Menu Salarios
+2021-01-15 18:59:41 - Calcular Salario CSV
+2021-01-15 18:59:43 - Listar Salario
+2021-01-15 19:00:02 - Menu Salarios
+2021-01-15 19:00:15 - Listar Salario
+2021-01-15 19:00:17 - Calcular Salario CSV
+2021-01-15 19:00:19 - Listar Salario
+2021-01-15 19:00:59 - Menu Salarios
+2021-01-15 19:01:06 - Calcular Salario CSV
+2021-01-15 19:01:07 - Listar Salario
+2021-01-15 19:01:40 - Menu Salarios
+2021-01-15 19:01:47 - Calcular Salario CSV
+2021-01-15 19:01:48 - Listar Salario
+2021-01-15 19:02:12 - Menu Salarios
+2021-01-15 19:02:19 - Calcular Salario CSV
+2021-01-15 19:02:54 - Menu Salarios
+2021-01-15 19:03:08 - Calcular Salario CSV
+2021-01-15 19:03:09 - Listar Salario
+2021-01-15 19:05:16 - Menu Salarios
+2021-01-15 19:05:24 - Calcular Salario CSV
+2021-01-15 19:05:26 - Listar Salario
+2021-01-15 19:06:03 - Menu Salarios
+2021-01-15 19:06:08 - Calcular Salario CSV
+2021-01-15 19:06:10 - Listar Salario
+2021-01-15 19:09:43 - Menu Salarios
+2021-01-15 19:09:49 - Listar Salario
+2021-01-15 19:09:55 - Calcular Salario CSV
+2021-01-15 19:10:02 - Listar Salario
+2021-01-15 19:10:36 - Menu Salarios
+2021-01-15 19:10:43 - Calcular Salario CSV
+2021-01-15 19:10:45 - Listar Salario
+2021-01-15 19:11:49 - Calcular Salario CSV
+2021-01-15 19:11:56 - Listar Salario
+2021-01-15 19:13:42 - Listar Salario
+2021-01-15 19:13:47 - Calcular Salario CSV
+2021-01-15 19:13:49 - Listar Salario
+2021-01-15 19:14:03 - Menu Salarios
+2021-01-15 19:14:10 - Calcular Salario CSV
+2021-01-15 19:14:11 - Listar Salario
+2021-01-15 19:15:42 - Calcular Salario CSV
+2021-01-15 19:15:43 - Listar Salario
+2021-01-15 19:16:26 - Menu Salarios
+2021-01-15 19:16:33 - Calcular Salario CSV
+2021-01-15 19:16:34 - Listar Salario
+2021-01-15 19:18:59 - Menu Salarios
+2021-01-15 20:16:07 - Calcular Salario CSV
+2021-01-15 20:19:13 - Menu Salarios
+2021-01-15 20:19:18 - Calcular Salario CSV
+2021-01-15 20:19:48 - Menu Salarios
+2021-01-15 20:19:55 - Calcular Salario CSV
+2021-01-15 20:22:26 - Menu Salarios
+2021-01-15 20:22:31 - Calcular Salario CSV
+2021-01-15 20:28:05 - Menu Salarios
+2021-01-15 20:28:12 - Calcular Salario CSV
+2021-01-15 20:28:24 - Listar Salario
+2021-01-15 20:31:46 - Menu Salarios
+2021-01-15 20:31:52 - Calcular Salario CSV
+2021-01-15 20:31:54 - Listar Salario
+2021-01-15 20:35:07 - Menu Salarios
+2021-01-15 20:35:14 - Calcular Salario CSV
+2021-01-15 20:38:08 - Menu Salarios
+2021-01-15 20:38:14 - Calcular Salario CSV
+2021-01-15 20:39:27 - Menu Salarios
+2021-01-15 20:39:34 - Calcular Salario CSV
+2021-01-15 20:40:16 - Menu Salarios
+2021-01-15 20:40:21 - Calcular Salario CSV
+2021-01-15 20:41:52 - Menu Salarios
+2021-01-15 20:41:59 - Calcular Salario CSV
+2021-01-15 20:42:21 - Menu Salarios
+2021-01-15 20:42:28 - Calcular Salario CSV
+2021-01-15 20:43:05 - Menu Salarios
+2021-01-15 20:43:13 - Calcular Salario CSV
+2021-01-15 20:43:42 - Listar Salario
+2021-01-15 20:46:31 - Menu Salarios
+2021-01-15 20:46:37 - Calcular Salario CSV
+2021-01-15 20:46:44 - Listar Salario
+2021-01-15 20:49:05 - Menu Salarios
+2021-01-15 20:49:23 - Calcular Salario CSV
+2021-01-15 20:49:35 - Listar Salario
+2021-01-15 20:50:13 - Menu Salarios
+2021-01-15 20:50:24 - Calcular Salario CSV
+2021-01-15 20:50:29 - Listar Salario
+2021-01-15 20:57:55 - Menu Salarios
+2021-01-15 20:58:02 - Calcular Salario CSV
+2021-01-15 20:58:45 - Menu Salarios
+2021-01-15 20:58:50 - Calcular Salario CSV
+2021-01-15 20:59:08 - Listar Salario
+2021-01-15 21:05:18 - Calcular Salario CSV
+2021-01-15 21:06:55 - Listar Salario
+2021-01-15 21:12:25 - Menu Salarios
+2021-01-15 21:12:33 - Calcular Salario CSV
+2021-01-15 21:14:13 - Listar Salario
+2021-01-15 21:17:55 - Menu Salarios
+2021-01-15 21:25:46 - Calcular Salario CSV
+2021-01-15 21:37:46 - Menu Salarios
