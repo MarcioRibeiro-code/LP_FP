@@ -1,0 +1,4 @@
+Codigo Funcionario,Contador,Meias Jornadas,Jornadas Completas,Faltas,Jornadas ao fim de semana,Data-dia,Data-mes,Data-ano
+1,4,1,20,2,0,2,2,2021
+2,16,0,22,0,1,2,2,2021
+3,0,0,22,0,1,2,2,2021

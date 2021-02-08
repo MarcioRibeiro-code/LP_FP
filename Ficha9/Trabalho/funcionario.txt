@@ -1,0 +1,7 @@
+Contador,Flag,Codigo Funcionario,Nome,Numero de Telefone,Estado Civil,Numero de Dependentes,Cargo,Estado IRSData Nascimento-Dia,Data Nascimento-Mes,Data Nascimento-Ano,Data Entrada-Dia,Data Entrada-Mes,Data Entrada-Ano,Data Saida-Dia,Data Saida-Mes,Data Saida-Ano
+6,1,1,a,9111,C,1,E,0,1,1,2020,1,1,2020,0,0,0
+0,1,2,teste2,91222,C,0,E,0,1,1,2001,1,1,2020,0,0,0
+0,1,4,teste4,91333,C,0,E,0,1,1,2001,1,1,2020,0,0,0
+0,1,5,teste5,91555,C,0,A,0,1,1,2001,1,1,2020,0,0,0
+0,1,6,teste4,91666,C,0,E,0,1,1,2001,1,1,2020,0,0,0
+0,1,7,teste7,91777,S,0,E,0,1,1,1992,1,1,2017,0,0,0

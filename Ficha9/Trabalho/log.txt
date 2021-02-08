@@ -1,0 +1,103 @@
+2021-02-04 10:43:22 - Listar o Registro de Trabalho
+2021-02-04 10:44:25 - Menu Registro de Trabalho
+2021-02-04 10:59:08 - Funcionario do Mes
+2021-02-04 10:59:57 - Inserir Dias de trabalho de todos os funcionarios
+2021-02-04 11:00:01 - Listar o Registro de Trabalho
+2021-02-04 11:00:07 - Menu Registro de Trabalho
+2021-02-08 14:29:53 - Listar o Registro de Trabalho
+2021-02-08 14:30:02 - Menu Registro de Trabalho
+2021-02-08 14:30:05 - Listar Funcionarios
+2021-02-08 14:30:13 - Menu Funcionario
+2021-02-08 14:34:47 - Listar Funcionarios
+2021-02-08 14:34:50 - Menu Funcionario
+2021-02-08 14:34:58 - Listar o Registro de Trabalho
+2021-02-08 14:35:19 - Frequencia Registro de Trabalho
+2021-02-08 14:35:24 - Funcionario do Mes
+2021-02-08 14:35:36 - Listar o Registro de Trabalho
+2021-02-08 14:35:50 - Menu Registro de Trabalho
+2021-02-08 15:40:02 - Listar o Registro de Trabalho
+2021-02-08 15:40:26 - Menu Registro de Trabalho
+2021-02-08 15:54:49 - Listar o Registro de Trabalho
+2021-02-08 16:07:07 - Funcionario do Mes
+2021-02-08 16:07:16 - Funcionario do Mes
+2021-02-08 16:07:28 - Listar o Registro de Trabalho
+2021-02-08 16:07:31 - Menu Registro de Trabalho
+2021-02-08 16:18:19 - Funcionario do Mes
+2021-02-08 16:18:44 - Menu Registro de Trabalho
+2021-02-08 16:22:04 - Funcionario do Mes
+2021-02-08 16:22:09 - Funcionario do Mes
+2021-02-08 16:22:16 - Menu Registro de Trabalho
+2021-02-08 16:23:54 - Funcionario do Mes
+2021-02-08 16:23:56 - Menu Registro de Trabalho
+2021-02-08 16:25:11 - Funcionario do Mes
+2021-02-08 16:25:17 - Funcionario do Mes
+2021-02-08 16:25:19 - Menu Registro de Trabalho
+2021-02-08 16:30:37 - Funcionario do Mes
+2021-02-08 16:30:38 - Menu Registro de Trabalho
+2021-02-08 16:42:32 - Menu Registro de Trabalho
+2021-02-08 16:46:53 - Listar o Registro de Trabalho
+2021-02-08 16:52:01 - Funcionario do Mes
+2021-02-08 16:52:07 - Listar o Registro de Trabalho
+2021-02-08 16:56:54 - Funcionario do Mes
+2021-02-08 16:57:04 - Menu Registro de Trabalho
+2021-02-08 16:58:44 - Funcionario do Mes
+2021-02-08 16:58:47 - Menu Registro de Trabalho
+2021-02-08 17:00:43 - Funcionario do Mes
+2021-02-08 17:00:46 - Menu Registro de Trabalho
+2021-02-08 17:02:44 - Funcionario do Mes
+2021-02-08 17:02:49 - Funcionario do Mes
+2021-02-08 17:03:56 - Menu Registro de Trabalho
+2021-02-08 17:04:10 - Funcionario do Mes
+2021-02-08 17:04:14 - Funcionario do Mes
+2021-02-08 17:07:42 - Menu Registro de Trabalho
+2021-02-08 17:12:01 - Funcionario do Mes
+2021-02-08 17:12:56 - Menu Registro de Trabalho
+2021-02-08 17:13:06 - Funcionario do Mes
+2021-02-08 17:14:52 - Menu Registro de Trabalho
+2021-02-08 17:15:14 - Funcionario do Mes
+2021-01-08 17:16:04 - Menu Registro de Trabalho
+2021-02-08 17:17:21 - Funcionario do Mes
+2021-02-08 17:17:29 - Menu Registro de Trabalho
+2021-03-08 18:56:04 - Funcionario do Mes
+2021-03-08 18:56:25 - Menu Registro de Trabalho
+2021-03-08 19:41:53 - Funcionario do Mes
+2021-03-08 19:42:37 - Menu Registro de Trabalho
+2021-03-08 20:14:53 - Menu Funcionario Do Mes
+2021-03-08 20:14:53 - Menu Registro de Trabalho
+2021-03-08 20:17:51 - Menu Funcionario Do Mes
+2021-03-08 20:17:52 - Menu Registro de Trabalho
+2021-03-08 20:56:28 - Menu Funcionario Do Mes
+2021-03-08 20:56:29 - Menu Registro de Trabalho
+2021-03-08 20:58:04 - Menu Funcionario Do Mes
+2021-03-08 20:58:04 - Menu Registro de Trabalho
+2021-03-08 21:10:55 - Exportar o registro de trabalho de um certo mes
+2021-03-08 21:11:59 - Menu Registro de Trabalho
+2021-03-08 21:13:17 - Exportar o registro de trabalho de um certo mes
+2021-03-08 21:13:21 - Menu Registro de Trabalho
+2021-03-08 21:14:32 - Exportar o registro de trabalho de um certo mes
+2021-03-08 21:14:34 - Menu Registro de Trabalho
+2021-03-08 21:32:39 - Listar Funcionarios
+2021-03-08 21:32:56 - Menu Funcionario
+2021-03-08 21:33:05 - Menu Registro de Trabalho
+2021-03-08 21:37:55 - Menu Funcionario Do Mes
+2021-03-08 21:38:44 - Frequencia Registro de Trabalho
+2021-03-08 21:39:03 - Menu Registro de Trabalho
+2021-03-08 21:39:37 - Menu Funcionario
+2021-03-08 21:39:49 - Menu Registro de Trabalho
+2021-02-08 21:46:31 - Listar Funcionarios
+2021-02-08 21:47:13 - Atualizar dados Funcionarios
+2021-02-08 21:47:22 - Listar Funcionarios
+2021-02-08 21:47:46 - Guardar Ficheiros Funcionarios
+2021-02-08 21:47:53 - Menu Funcionario
+2021-02-08 21:49:57 - Atualizar dados Funcionarios
+2021-02-08 21:49:57 - Menu Funcionario
+2021-02-08 21:50:29 - Atualizar dados Funcionarios
+2021-02-08 21:50:30 - Menu Funcionario
+2021-02-08 21:52:12 - Atualizar dados Funcionarios
+2021-02-08 21:52:13 - Menu Funcionario
+2021-02-08 21:54:06 - Atualizar dados Funcionarios
+2021-02-08 21:54:08 - Menu Funcionario
+2021-02-08 21:56:57 - Atualizar dados Funcionarios
+2021-02-08 21:56:58 - Menu Funcionario
+2021-02-08 21:57:49 - Atualizar dados Funcionarios
+2021-02-08 21:57:50 - Menu Funcionario
