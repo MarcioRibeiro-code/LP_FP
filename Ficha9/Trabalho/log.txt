@@ -101,3 +101,12 @@
 2021-02-08 21:56:58 - Menu Funcionario
 2021-02-08 21:57:49 - Atualizar dados Funcionarios
 2021-02-08 21:57:50 - Menu Funcionario
+2021-02-08 22:21:19 - Menu Registro de Trabalho
+2021-02-08 22:21:33 - Atualizar dados Funcionarios
+2021-02-08 22:21:36 - Listar Funcionarios
+2021-02-08 22:21:43 - Menu Funcionario
+2021-02-08 22:22:18 - Inserir Funcionario
+2021-02-08 22:22:21 - Guardar Ficheiros Funcionarios
+2021-02-08 22:22:25 - Listar Funcionarios
+2021-02-08 22:22:43 - Menu Funcionario
+2021-02-08 22:23:20 - Menu Funcionario
